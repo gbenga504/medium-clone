@@ -1,0 +1,16 @@
+.footer {
+    position: absolute;
+    height: 50px;
+    padding-top: 10px;
+    width: 100%;
+    bottom: -200px;
+    left: 0px;
+    border-top: 1px solid #c0c0c0;
+}
+
+.tag{
+    font-size: 13px;
+    color: #666;
+    font-family: MidRaleway;
+    padding-left: 15px;
+}

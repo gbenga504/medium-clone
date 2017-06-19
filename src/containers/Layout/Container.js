@@ -20,6 +20,7 @@ const styles = {
     container:{
         paddingLeft: 200, 
         paddingRight: 200,
+        height: "100%",
     }
 }
 

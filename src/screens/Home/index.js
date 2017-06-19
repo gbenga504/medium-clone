@@ -3,6 +3,7 @@ import {Container} from '../../containers/Layout';
 import Header from './Header/';
 import {SubHeader, TextRight, ButtonRight} from './SubHeader/';
 import Section from './Section';
+import Footer from '../../containers/Footer';
 
 class Home extends PureComponent{
     render(){
@@ -20,6 +21,7 @@ class Home extends PureComponent{
                         </SubHeader>
                     </div>
                 </div>
+                <Footer />
             </Container>
         )
     }
