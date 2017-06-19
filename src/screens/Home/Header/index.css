@@ -1,0 +1,33 @@
+#header{
+    height: 70px;
+    padding-top: 20px;
+}
+
+#logo{
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 45px;
+}
+
+.section-icon-header-positioner{
+    position: absolute;
+    width: 200px;
+    right: -20px;
+}
+
+#header-right-section{
+    color: #333;
+    font-size: 13px;
+    font-family: Raleway;
+}
+
+#iconHolder{
+    padding-left: 10px;
+}
+
+.headerIcons{
+    width: 20px;
+    height: 20px;
+}
+
+

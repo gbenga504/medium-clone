@@ -1,0 +1,22 @@
+#subHeader{
+    margin-top: 10px;
+    height: 70px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+#tagName{
+    color: #333;
+    font-size: 20px;
+    font-family: Raleway;
+    height: 70px;
+    padding-top: 35px;
+    padding-left: 0px;
+}
+
+#title{
+    width: auto;
+    border-bottom: 1px solid #333;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}

@@ -1,0 +1,20 @@
+#card{
+    height: 250px;
+    background: white;
+    border: 1px solid #E5E5E5;
+}
+
+#newsDisplayHolder{
+    background: #f0f0f0;
+    height: 248px;
+}
+
+#content{
+    padding: 10px;
+}
+
+.title{
+    color: #333;
+    font-size: 15px;
+    font-family:  Raleway;
+}
