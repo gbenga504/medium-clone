@@ -11,10 +11,22 @@
 
 #content{
     padding: 10px;
+    height: 240px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .title{
     color: #333;
     font-size: 15px;
     font-family:  Raleway;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.body{
+    font-family: MidRaleway;
+    font-size: 13px;
+    color: #666;
+    padding: 10px 0px 0px 0px;
 }

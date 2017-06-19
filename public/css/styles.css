@@ -2,3 +2,8 @@
     font-family: Raleway;
     src: url("/fonts/raleway_semibold.ttf");
 }
+
+@font-face {
+    font-family: MidRaleway;
+    src: url("/fonts/raleway_regular.ttf");
+}

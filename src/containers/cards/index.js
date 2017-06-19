@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import Bottom from './Bottom';
 import './index.css';
 
 class Card extends PureComponent{
@@ -12,6 +13,8 @@ class Card extends PureComponent{
                         </div>
                         <div className="col-xs-8" id="content">
                             <div className="col-xs-12 title">Building design process within teams</div>
+                            <div className="col-xs-12 body">A practical workflow to manage design projects </div>
+                            <Bottom />
                         </div>
                     </div>
                 </div>

@@ -25,6 +25,15 @@ const Textstyles = {
         width: "100%",
         position: "absolute",
     },
+    rightButton:{
+        right: 0,
+        width: "100px",
+        borderRadius: "10px",
+        position: "absolute",
+        textAlign: "center",
+        border: "1px solid #21f693",
+        color: "#21f693",
+    },
     rightPositionerMarker:{
         right: 0,
         position: "absolute",
@@ -38,8 +47,12 @@ const Textstyles = {
 class ButtonRight extends PureComponent{
     render(){
         return (
-            <div className="row">
-
+            <div className="row" style={Textstyles.title}>
+                <div style={Textstyles.rightPositioner}>
+                    <div style={Textstyles.rightButton}>
+                        {this.props.title}
+                    </div>
+                </div>
             </div>
         )
     }

@@ -4,9 +4,9 @@ import Card from '../../../containers/cards';
 class Section extends PureComponent{
     render(){
         return (
-            <div class="row" style={{marginTop: 50}}>
-                <div class="container">
-                    <div class="row">
+            <div className="row" style={{marginTop: 50}}>
+                <div>
+                    <div className="row">
                         <Card />
                         <Card />
                     </div>

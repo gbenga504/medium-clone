@@ -15,6 +15,9 @@ class Home extends PureComponent{
                             <TextRight title="More"/>
                         </SubHeader>
                         <Section />
+                        <SubHeader title="Live Updates">
+                            <ButtonRight title="Follow"/>
+                        </SubHeader>
                     </div>
                 </div>
             </Container>
