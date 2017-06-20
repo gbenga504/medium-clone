@@ -5,13 +5,15 @@ import {
 } from 'react-router-dom';
 import Home from './screens/Home';
 import Post from './screens/Post';
+import News from './screens/News';
+
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Route path="/">
-          <Route exact component={Post} />
+          <Route exact component={News} />
         </Route>
       </Router>
     );

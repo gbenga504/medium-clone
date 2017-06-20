@@ -1,0 +1,29 @@
+.info{
+    margin-top: 100px;
+}
+
+
+#imageIcon{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #f0f0f0;
+}
+
+#commenter_info{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 10px;
+    top: 0px;
+}
+
+.writer_name{
+    font-family: Raleway;
+    font-size: 13px;
+}
+
+.time{
+    font-family: MidRaleway;
+    font-size: 13px;
+    margin-top: 10px;
+}

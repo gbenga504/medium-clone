@@ -31,7 +31,7 @@ const Textstyles = {
         borderRadius: "10px",
         position: "absolute",
         textAlign: "center",
-        border: "1px solid #21f693",
+        border: "1px solid #2196f3",
         color: "#2196f3",
     },
     rightPositionerMarker:{

@@ -1,0 +1,9 @@
+.message{
+    margin-top: 50px;
+}
+
+.messageBody{
+    font-family: MidRaleway;
+    font-size: 15px;
+    color: #333;
+}
