@@ -8,7 +8,7 @@ import Footer from '../../containers/Footer';
 class Home extends PureComponent{
     render(){
         return (
-            <Container>
+            <Container color="#FBFCFD">
                 <div className="row">
                     <div className="col-xs-12">
                         <Header />

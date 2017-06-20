@@ -1,0 +1,55 @@
+#header{
+    height: 70px;
+    padding-top: 20px;
+}
+
+#logo{
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 45px;
+}
+
+#saveChanges{
+    font-family: Raleway;
+    font-size: 13px;
+}
+
+.section-icon-header-positioner{
+    position: absolute;
+    width: 250px;
+    right: 0px;
+}
+
+#header-right-section{
+    color: #333;
+    font-size: 13px;
+    font-family: Raleway;
+}
+
+#iconHolder{
+    padding-left: 10px;
+}
+
+#publishBtn{
+    position: absolute;
+    margin-left: 0px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #21f693;
+    width: 100px;
+    text-align: center;
+    font-family: MidRaleway;
+    font-size: 13px;
+    padding-top: 4px;
+    margin-top: -6px;
+}
+
+#profileImage{
+    position: absolute;
+    margin-left: 120px;
+    margin-top: -6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #f0f0f0;
+}

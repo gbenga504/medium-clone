@@ -7,3 +7,15 @@
     font-family: MidRaleway;
     src: url("/fonts/raleway_regular.ttf");
 }
+
+#root {
+    height: 100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+}
+
+body{
+    overflow: hidden;
+}

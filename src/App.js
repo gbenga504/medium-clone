@@ -4,13 +4,14 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from './screens/Home';
+import Post from './screens/Post';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Route path="/">
-          <Route exact component={Home} />
+          <Route exact component={Post} />
         </Route>
       </Router>
     );

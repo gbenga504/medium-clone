@@ -7,7 +7,7 @@ import React, {PureComponent} from 'react';
 class Container extends PureComponent{
     render(){
         return (
-            <div className="row" style={styles.container}>
+            <div className="row" style={{...styles.container, ...{backgroundColor: this.props.color}}}>
                 <div className="col-xs-12"> 
                     {this.props.children}
                 </div>
