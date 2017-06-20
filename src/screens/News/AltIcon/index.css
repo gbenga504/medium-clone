@@ -4,6 +4,7 @@
     right: 100px;
     height:  auto;
     top: 150px;
+    z-index: 100;
 }
 
 #tagName{
