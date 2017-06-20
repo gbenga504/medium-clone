@@ -6,6 +6,7 @@ import {
 import Home from './screens/Home';
 import Post from './screens/Post';
 import News from './screens/News';
+import Search from './screens/Search';
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/">
-          <Route exact component={News} />
+          <Route exact component={Search} />
         </Route>
       </Router>
     );

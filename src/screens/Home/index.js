@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {Container} from '../../containers/Layout';
-import Header from './Header/';
+import Header from '../../containers/Header/';
 import {SubHeader, TextRight, ButtonRight} from './SubHeader/';
 import Section from './Section';
 import Footer from '../../containers/Footer';
