@@ -32,7 +32,7 @@ const Textstyles = {
         position: "absolute",
         textAlign: "center",
         border: "1px solid #21f693",
-        color: "#21f693",
+        color: "#2196f3",
     },
     rightPositionerMarker:{
         right: 0,

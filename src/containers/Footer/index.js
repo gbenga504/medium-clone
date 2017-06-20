@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import NavigationalFooter from './NavigationalFooter';
 import './index.css';
 
 class Footer extends PureComponent{
@@ -14,3 +15,4 @@ class Footer extends PureComponent{
 }
 
 export default Footer;
+export {NavigationalFooter};

@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {Container} from '../../containers/Layout';
 import Header from './Header';
+import Form from './Form';
 
 
 class Post extends PureComponent{
@@ -12,7 +13,7 @@ class Post extends PureComponent{
                     <Container color="#fff">
                         <div className="row">
                             <div className="col-xs-12">
-                                
+                                <Form />
                             </div>
                         </div>
                     </Container>
