@@ -1,0 +1,29 @@
+.altIcon{
+    position: fixed;
+    width: 70px;
+    right: 100px;
+    height:  auto;
+    top: 150px;
+}
+
+#tagName{
+    font-family: MidRaleway;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.iconHolder{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.recommend_icon{
+    width: 20px;
+    height: 20px;
+}
+
+.shareCount{
+    font-family: MidRaleway;
+    font-size: 13px; 
+}
