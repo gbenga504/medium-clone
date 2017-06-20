@@ -1,0 +1,20 @@
+.navFooter{
+    background: #f0f0f0;
+    height: 150px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 40px;
+}
+
+.navBtn{
+    width: 25px;
+    height: 25px;
+}
+
+#postTags{
+    font-family: Raleway;
+    font-size: 15px;
+    color: #333;
+}

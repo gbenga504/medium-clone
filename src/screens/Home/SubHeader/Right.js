@@ -6,7 +6,7 @@ class TextRight extends PureComponent{
             <div className="row" style={Textstyles.title}>
                 <div style={Textstyles.rightPositioner}>
                     <div style={Textstyles.rightPositionerMarker}>
-                        {this.props.title} &nbsp; <img src="/images/back.png" alt="backButton" style={Textstyles.backImage} />
+                        {this.props.title} &nbsp; <img src="/images/forward.png" alt="backButton" style={Textstyles.backImage} />
                     </div>
                 </div>
             </div>

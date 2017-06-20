@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import {Container} from '../../containers/Layout';
+import {NavigationalFooter} from '../../containers/Footer';
 import Header from './Header';
 import Form from './Form';
 
@@ -18,6 +19,7 @@ class Post extends PureComponent{
                         </div>
                     </Container>
                 </div>
+                <NavigationalFooter />
             </div>
         )
     }
