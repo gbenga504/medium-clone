@@ -11,7 +11,7 @@ class Home extends PureComponent{
             <Container color="#FBFCFD">
                 <div className="row">
                     <div className="col-xs-12">
-                        <Header />
+                        <Header color="#FBFCFD" />
                         <SubHeader title="Latest News">
                             <TextRight title="More"/>
                         </SubHeader>

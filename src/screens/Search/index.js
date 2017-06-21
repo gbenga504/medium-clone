@@ -9,7 +9,7 @@ class Search extends PureComponent{
         return (
             <div className="row">
             	<div className="col-xs-12">
-                    <Header />
+                    <Header color="#fff"/>
                     <Container color="#fff">
                         <div className="row">
                             <div className="col-xs-12">
