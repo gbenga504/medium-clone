@@ -1,0 +1,20 @@
+.sectionPadder{
+    height: auto;
+    padding-bottom: 40px;
+    border: 2px solid #E5E5E5;
+}
+
+.section{
+    margin-top: 50px;
+}
+
+.socialBtn{
+    height: 50px;
+    border-radius: 5px;
+    background: #2196f3;
+    border: 0px solid transparent;
+}
+
+.btnContainer{
+    margin-top: 20px;
+}
