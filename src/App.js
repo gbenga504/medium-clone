@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/">
-          <Route exact component={Admin} />
+          <Route exact component={Admin} path="/admin"/>
         </Route>
       </Router>
     );
