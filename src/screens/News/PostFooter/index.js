@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Section from './Section';
 import './index.css';
-import Footer from '../../../containers/Footer';
 
 class PostFooter extends Component{
     render(){

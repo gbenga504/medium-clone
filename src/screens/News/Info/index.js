@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react';
-import {Container} from '../../../containers/Layout';
 import './index.css';
 
 class Info extends PureComponent{

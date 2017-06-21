@@ -4,7 +4,7 @@
 
 import React, {PureComponent} from 'react';
 
-class Container extends PureComponent{
+class ContainerLayout extends PureComponent{
     render(){
         return (
             <div className="row" style={{...styles.container, ...{backgroundColor: this.props.color}}}>
@@ -25,4 +25,4 @@ const styles = {
 }
 
 
-export default Container;
+export default ContainerLayout;

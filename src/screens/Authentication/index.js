@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {Container} from '../../containers/Layout';
+import {ContainerLayout} from '../../containers/Layout';
 import Header from './Header';
 import AuthenticationForm from './AuthenticationForm';
 
@@ -9,13 +9,13 @@ class Authentication extends PureComponent{
             <div className="row">
                 <div className="col-xs-12">
                     <Header/>
-                    <Container color="#FBFCFD">
+                    <ContainerLayout color="#FBFCFD">
                         <div className="row">
                             <div className="col-xs-12">
                                 <AuthenticationForm />
                             </div>
                         </div>
-                    </Container>
+                    </ContainerLayout>
                 </div>
             </div>
         )

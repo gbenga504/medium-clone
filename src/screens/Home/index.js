@@ -1,28 +1,28 @@
 import React, {PureComponent} from 'react';
-import {Container} from '../../containers/Layout';
-import Header from '../../containers/Header/';
-import {SubHeader, TextRight, ButtonRight} from './SubHeader/';
+import {ContainerLayout} from '../../containers/Layout';
+import Header from '../../containers/Header';
+import {Headlines, TextRight, ButtonRight} from './Headlines';
 import Section from './Section';
-import Footer from '../../containers/Footer';
+import {StaticFooter} from '../../containers/Footer';
 
 class Home extends PureComponent{
     render(){
         return (
-            <Container color="#FBFCFD">
+            <ContainerLayout color="#FBFCFD">
                 <div className="row">
                     <div className="col-xs-12">
                         <Header color="#FBFCFD" />
-                        <SubHeader title="Latest News">
+                        <Headlines title="Latest News">
                             <TextRight title="More"/>
-                        </SubHeader>
+                        </Headlines>
                         <Section />
-                        <SubHeader title="Live Updates">
-                            <ButtonRight title="Follow"/>
-                        </SubHeader>
+                        <Headlines title="Live Updates">
+                            <ButtonRight title="More"/>
+                        </Headlines>
                     </div>
                 </div>
-                <Footer />
-            </Container>
+                <StaticFooter />
+            </ContainerLayout>
         )
     }
 }

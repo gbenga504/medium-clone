@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import './Bottom.css';
+import './index.css';
 
 class Bottom extends PureComponent{
     render(){

@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
-import HeaderContainer from "../../../containers/HeaderContainer";
+import HeaderLayout from "../../../containers/Layout";
 import "./index.css";
 
 class Header extends PureComponent {
   render() {
     return (
-      <HeaderContainer border={true} color="#fff">
+      <HeaderLayout border={true} color="#fff">
           <div className="col-xs-12">
             <div className="col-xs-4">
               <img src="" id="logo" alt="logo"/> &nbsp; <span id="saveChanges">Unsaved changes</span>
@@ -24,7 +24,7 @@ class Header extends PureComponent {
               </div>
             </div>
           </div>
-      </HeaderContainer>
+      </HeaderLayout>
     );
   }
 }

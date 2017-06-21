@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
+import Controller from './Controller';
 import Home from './screens/Home';
 import Post from './screens/Post';
 import News from './screens/News';
@@ -15,11 +16,17 @@ class App extends Component {
     return (
       <Router>
         <Route path="/">
-          <Route exact component={Admin} path="/admin"/>
+          <Route exact component={Home}/>
         </Route>
       </Router>
     );
   }
 }
 
+
+          // <Route component={Post} path="/post"/>
+          // <Route component={News} path="/news"/>
+          // <Route component={Search} path="/search"/>
+          // <Route component={Authentication} path="/admin"/>
+          // <Route component={Admin} path="/panel"/>
 export default App;

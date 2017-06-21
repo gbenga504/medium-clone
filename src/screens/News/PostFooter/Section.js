@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import Card from '../../../containers/cards';
+import {FlatCard} from '../../../containers/cards';
 
 class Section extends PureComponent{
     render(){
@@ -7,8 +7,8 @@ class Section extends PureComponent{
             <div className="row" style={{marginTop: 50}}>
                 <div className="col-xs-12">
                     <div className="container">
-                        <Card />
-                        <Card />
+                        <FlatCard />
+                        <FlatCard />
                     </div>
                 </div>
             </div>

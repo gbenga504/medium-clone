@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {Container} from '../../containers/Layout';
+import {ContainerLayout} from '../../containers/Layout';
 import Info from './Info';
 import Title from './Title';
 import Message from './Message';
@@ -12,7 +12,7 @@ class News extends PureComponent{
         return (
             <div className="row">
             	<div className="col-xs-12">
-                    <Container color="#fff">
+                    <ContainerLayout color="#fff">
                         <div className="row">
                             <div className="col-xs-12">
                                 <Info />
@@ -21,7 +21,7 @@ class News extends PureComponent{
                                 <AltIcon />
                             </div>
                         </div>
-                    </Container>
+                    </ContainerLayout>
                 </div>
                 <PostFooter />
             </div>

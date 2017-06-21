@@ -3,15 +3,14 @@ import "./index.css";
 import {TextRight, ButtonRight} from './Right';
 
 
-class SubHeader extends PureComponent {
+class Headlines extends PureComponent {
   constructor(props){
       super(props);
   }
 
-
   render() {
     return (
-        <div className="row" id="subHeader">
+        <div className="row" id="headline">
             <div className="col-xs-4" id="tagName">
                 <div id="title">{this.props.title}</div>
             </div>
@@ -24,4 +23,4 @@ class SubHeader extends PureComponent {
   }
 }
 
-export {SubHeader, TextRight, ButtonRight};
+export {Headlines, TextRight, ButtonRight};
