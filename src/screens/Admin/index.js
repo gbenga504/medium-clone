@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import Header from '../../containers/Header';
 import Container from '../../containers/Layout/Container';
 import SubHeader from './SubHeader';
-import {PlainCard} from '../../containers/cards';
+import {MaterialCard} from '../../containers/cards';
 
 class Admin extends PureComponent{
     render(){
@@ -14,8 +14,8 @@ class Admin extends PureComponent{
                     <Container color="#F4F4EF">
                         <div className="row">
                             <div className="col-xs-12 col-sm-6">
-                                <PlainCard />
-                                <PlainCard />
+                                <MaterialCard />
+                                <MaterialCard />
                             </div>
                         </div>
                     </Container>

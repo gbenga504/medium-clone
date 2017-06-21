@@ -1,0 +1,56 @@
+.materialCard{
+    background-color: #fff;
+    margin-top: 50px;
+    height: auto;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.05);
+}
+
+.adminPostTitle{
+    font-size: 16px;
+    font-family: Raleway;
+    margin-top: 20px;
+    text-align: justify;
+    padding: 0px 0px 0px 7px;
+}
+
+.post_image{
+    padding: 0px 0px 0px 0px;
+    height: 150px;
+    margin-top: 15px;
+    background: #E5E5E5;
+}
+
+.post_message{
+    font-family: MidRaleway;
+    font-size:13px;
+    text-align: justify
+}
+
+.post_message_holder{
+    padding: 10px 2px 0px 2px;
+}
+
+.recommend_btn{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+
+.recommend_img{
+    width: 23px;
+    height: 23px;
+}
+
+.recommended_tag{
+    font-family: Raleway;
+    font-size: 14px;
+}
+
+.admin_core_btn{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
