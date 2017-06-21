@@ -25,7 +25,7 @@ class MaterialCard extends PureComponent{
                                 <span className="recommended_tag">23 recommended</span> &nbsp; &nbsp; <img src="/images/recommend.png" alt="recommend" className="recommend_img"/> 
                             </div>
                             <div className="admin_core_btn">
-                                <img src="" alt="edit_btn" className="core_btn"/> &nbsp; &nbsp; &nbsp; <img src="" alt="delete_btn" className="core_btn"/>
+                                <img src="/images/edit.png" alt="edit_btn" className="recommend_img"/> &nbsp; &nbsp; &nbsp; <img src="/images/remove.png" alt="delete_btn" className="recommend_img"/>
                             </div>
                         </div>
                     </div>
