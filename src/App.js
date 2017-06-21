@@ -8,13 +8,14 @@ import Post from './screens/Post';
 import News from './screens/News';
 import Search from './screens/Search';
 import Authentication from './screens/Authentication';
+import Admin from './screens/Admin';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Route path="/">
-          <Route exact component={Authentication} />
+          <Route exact component={Admin} />
         </Route>
       </Router>
     );

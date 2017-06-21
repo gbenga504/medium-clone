@@ -5,7 +5,7 @@ import "./index.css";
 class Header extends PureComponent {
   render() {
     return (
-      <HeaderContainer>
+      <HeaderContainer color={this.props.color}>
           <div className="col-xs-2">
             <img src="" id="logo" alt="logo"/>
           </div>
