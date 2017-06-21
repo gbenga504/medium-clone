@@ -12,30 +12,25 @@
     border: 0px solid transparent;
     border-bottom: 1px solid #2196f3;
     color: #000;
-    font-weight: bold;
     padding-left: 0px;
 }
 
 ::-webkit-input-placeholder{
     font-family: MidRaleway;
     color: #000;
-    font-weight: bold;
 }
 
 ::-moz-placeholder{
     font-family: MidRaleway;
     color: #000;
-    font-weight: bold;
 }
 
 ::-ms-input-placeholder{
     font-family: MidRaleway;
     color: #000;
-    font-weight: bold;
 }
 
 :-moz-placeholder{
     font-family: MidRaleway;
     color: #000;
-    font-weight: bold;
 }

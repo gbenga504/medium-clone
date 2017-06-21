@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import Bottom from './Bottom';
 import './index.css';
+import PlainCard from './PlainCard';
 
 class Card extends PureComponent{
     render(){
@@ -24,3 +25,4 @@ class Card extends PureComponent{
 }
 
 export default Card;
+export {PlainCard};
