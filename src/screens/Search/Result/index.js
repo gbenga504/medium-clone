@@ -7,6 +7,8 @@ class Result extends PureComponent{
             <div className="row">
             	<div className="col-xs-12 col-sm-6">
                     <PlainCard />
+                    <PlainCard />
+                    <PlainCard />
                 </div>
             </div>
         )

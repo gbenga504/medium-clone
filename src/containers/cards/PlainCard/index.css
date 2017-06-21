@@ -1,8 +1,39 @@
 .plainCard{
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0px 70px 0px;
 }
 
 .cardTitle{
     font-family: Raleway;
     font-size: 16px;
+    text-align: justify;
+}
+
+.imageTagger{
+    background: #f0f0f0;
+    height: 200px;
+    width:100%;
+    margin-top: 20px;
+}
+
+.cardBody{
+    margin-top: 20px;
+    font-family: MidRaleway;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.recommend_btn{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.recommend_img{
+    width: 23px;
+    height: 23px;
+}
+
+.recommended_tag{
+    font-family: Raleway;
+    font-size: 14px;
 }
