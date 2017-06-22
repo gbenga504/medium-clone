@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import HeaderLayout from "../../../containers/Layout";
+import {HeaderLayout} from "../../../containers/Layout";
 import "./index.css";
 
 class Header extends PureComponent {

@@ -1,0 +1,17 @@
+@media screen and (min-width:0px) and (max-width:767px) {
+    .appContainer{
+        paddingLeft: 0;
+        paddingRight: 0;
+    }
+}
+
+@media screen and (min-width:768px){
+    .appContainer{
+        paddingLeft: 200;
+        paddingRight: 200;  
+    }
+}
+
+.appContainer{
+    height:  100%;
+}

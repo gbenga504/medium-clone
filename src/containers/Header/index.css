@@ -9,20 +9,25 @@
     margin-top: 45px;
 }
 
-.section-icon-header-positioner{
+#section-icon-header-positioner{
     position: absolute;
-    width: 200px;
-    right: -20px;
+    width: 130px;
+    right: 0px;
 }
 
 #header-right-section{
     color: #333;
     font-size: 13px;
     font-family: Raleway;
+    position: absolute;
+    width: 100px
 }
 
 #iconHolder{
     padding-left: 10px;
+    position: absolute;
+    top:0px;
+    margin-left: 100px;
 }
 
 .headerIcons{
