@@ -54,3 +54,19 @@
     right: 10px;
     top: 20px;
 }
+
+@media screen and (min-width:0px) and (max-width:767px) {
+    .adminPostTitle{
+        font-size: 14px;
+    }
+    .post_messag{
+        font-size: 12px;
+    }
+    .recommended_tag{
+        font-size: 12px;
+    }
+    .recommend_img{
+        width: 18px;
+        height: 18px;
+    }
+}

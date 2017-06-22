@@ -6,7 +6,7 @@ class Section extends PureComponent{
         return (
             <div className="row" style={{marginTop: 50}}>
                 <div className="col-xs-12">
-                    <div className="container">
+                    <div className="row">
                         <FlatCard />
                         <FlatCard />
                     </div>

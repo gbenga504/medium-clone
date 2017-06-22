@@ -5,9 +5,11 @@ import './index.css';
 class PostFooter extends Component{
     render(){
         return(
-            <div className="footer">
-                <div className="col-xs-12">
-                    <Section />
+            <div className="row">
+                <div className="footer row">
+                    <div className="col-xs-12">
+                        <Section />
+                    </div>
                 </div>
             </div>
         )

@@ -5,7 +5,7 @@ class SubHeader extends PureComponent{
     render(){
         return (
             <div className="row subHeader">
-                <div className="col-xs-offset-2 col-xs-8">
+                <div className="col-xs-12 col-sm-offset-2 col-sm-8">
                     <div className="row">
                         <div className="col-xs-2">
                             <div className="profile_image_holder">

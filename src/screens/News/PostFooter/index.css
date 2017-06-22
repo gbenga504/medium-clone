@@ -1,11 +1,13 @@
 .footer{
     background: #f0f0f0;
     height: auto;
-    position: absolute;
     width: 100%;
-    bottom: -200px;
     left: 0px;
     padding-top: 40px;
     border: 0px solid transparent;
     padding-bottom: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 100px;
 }
+

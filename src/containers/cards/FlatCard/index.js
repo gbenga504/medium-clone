@@ -5,7 +5,7 @@ import './index.css';
 class FlatCard extends PureComponent{
     render(){
         return (
-            <div className="col-sm-6 col-xs-12">
+            <div className="col-sm-6 col-xs-12" style={{marginBottom: "20px"}}>
                 <div className="col-xs-12">
                     <div className="row" id="card">
                         <div className="col-xs-4" id="newsDisplayHolder">

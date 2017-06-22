@@ -13,7 +13,7 @@ class Admin extends PureComponent{
                     <SubHeader />
                     <ContainerLayout color="#F4F4EF">
                         <div className="row">
-                            <div className="col-xs-12 col-sm-6">
+                            <div className="col-xs-12 col-sm-6" style={{backgroundColor: "#F4F4EF"}}>
                                 <MaterialCard />
                                 <MaterialCard />
                             </div>

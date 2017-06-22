@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     padding-top: 5px;
-    font-family: Raleway;
+    font-family: MidRaleway;
     font-size: 20px;
     font-style: normal;
     border: 0px solid transparent;
@@ -15,26 +15,33 @@
     padding-left: 10px;
 }
 
+@media screen and (min-width:0px) and (max-width:767px) {
+    #messageInput{
+        font-size: 14px;
+    }
+}
+
+
 ::-webkit-input-placeholder{
-    font-family: Raleway;
+    font-family: MidRaleway;
     color: #000;
     font-weight: bold;
 }
 
 ::-moz-placeholder{
-    font-family: Raleway;
+    font-family: MidRaleway;
     color: #000;
     font-weight: bold;
 }
 
 ::-ms-input-placeholder{
-    font-family: Raleway;
+    font-family: MidRaleway;
     color: #000;
     font-weight: bold;
 }
 
 :-moz-placeholder{
-    font-family: Raleway;
+    font-family: MidRaleway;
     color: #000;
     font-weight: bold;
 }

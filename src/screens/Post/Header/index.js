@@ -7,10 +7,10 @@ class Header extends PureComponent {
     return (
       <HeaderLayout border={true} color="#fff">
           <div className="col-xs-12">
-            <div className="col-xs-4">
+            <div className="col-sm-4 hidden-xs">
               <img src="" id="logo" alt="logo"/> &nbsp; <span id="saveChanges">Unsaved changes</span>
             </div>
-            <div className="col-xs-offset-2 col-xs-6">
+            <div className="col-xs-12 col-sm-offset-2 col-sm-6">
               <div className="section-icon-header-positioner">
                 <div id="header-right-section" className="col-xs-3">
                   share 

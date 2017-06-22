@@ -22,8 +22,8 @@ class News extends PureComponent{
                             </div>
                         </div>
                     </ContainerLayout>
+                    <PostFooter />
                 </div>
-                <PostFooter />
             </div>
         )
     }

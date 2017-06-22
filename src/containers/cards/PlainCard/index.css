@@ -37,3 +37,19 @@
     font-family: Raleway;
     font-size: 14px;
 }
+
+@media screen and (min-width:0px) and (max-width:767px) {
+    .cardTitle{
+        font-size: 14px;
+    }
+    .cardBody{
+        font-size: 12px;
+    }
+    .recommended_tag{
+        font-size: 12px;
+    }
+    .recommend_img{
+        width: 18px;
+        height: 18px;
+    }
+}
