@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
-import {HeaderLayout} from "../Layout";
+import { HeaderLayout } from "../Layout";
 import "./index.css";
-import Linking from '../Linking';
+import Linking from "../Linking";
 
 class Header extends PureComponent {
   render() {
@@ -13,14 +13,16 @@ class Header extends PureComponent {
         <div className="col-xs-offset-4 col-xs-6">
           <div id="section-icon-header-positioner">
             <div id="header-right-section">
-              <Linking to="/post">Make Post</Linking>
+              <Linking to="/post" style={{color:"#2196f3"}}>Make Post</Linking>
             </div>
             <div id="iconHolder">
-              <img
-                src="/images/search.png"
-                alt="search"
-                className="headerIcons"
-              />
+              <Linking to="/search">
+                <img
+                  src="/images/search.png"
+                  alt="search"
+                  className="headerIcons"
+                />
+              </Linking>
             </div>
           </div>
         </div>

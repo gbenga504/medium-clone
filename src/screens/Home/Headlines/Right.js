@@ -5,7 +5,7 @@ class TextRight extends PureComponent{
         return (
             <div className="row" style={Styles.title}>
                 <div style={Styles.rightPositioner}>
-                    <div style={TextStyles.rightPositionerMarker}>
+                    <div style={TextStyles.rightPositionerMarker} onClick={this.props.onClick}>
                         {this.props.title} &nbsp; <img src="/images/forward.png" alt="backButton" style={Styles.backImage} />
                     </div>
                 </div>
@@ -50,6 +50,7 @@ const TextStyles = {
     rightPositionerMarker:{
         right: 0,
         position: "absolute",
+        cursor: "pointer",
     }
 }
 

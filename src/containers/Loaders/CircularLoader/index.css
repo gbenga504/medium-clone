@@ -1,0 +1,31 @@
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;   
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2196f3;
+    border-bottom: 3px solid #2196f3;
+    animation: spin 1s linear infinite;
+    align-self: center;
+}
+
+@media screen and (min-width:0px) and (max-width:767px){
+    .circle{
+        margin-left: 50%;
+    }
+}
+
+@media screen and (min-width:768px){
+    .circle{
+        margin-left: 48.5%;
+    }
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
