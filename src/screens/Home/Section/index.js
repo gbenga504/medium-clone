@@ -10,12 +10,15 @@ class Section extends PureComponent{
                 <LoaderContainer isDataLoading={this.props.isDataLoading} />
                 <div>
                     <div className="row" style={Style.CardContainer}>
-                        <Linking to="/news/5">
-                            <FlatCard />
-                        </Linking>
-                        <Linking to="/news/5">
-                            <FlatCard />
-                        </Linking>
+                        {
+                            this.props.data.map(data => {
+                                return (
+                                   <Linking to={`/news/${data.id}`} key={`${data.postId}`}>
+                                        <FlatCard data={data}/>
+                                   </Linking> 
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

@@ -1,0 +1,53 @@
+[
+	{
+		"id" : "1",
+		"postId" : "1234",
+		"postImage": "/images/profile.jpg",
+		"user_userId": "1",
+		"title": "Beginning with Nodejs",
+		"body": "beginning nodeJs in 2016 is so cool, lets change the community",
+		"updated_at": "2017-06-22T16:26:22.762Z",
+		"User":{
+			"id" : "1",
+			"userId": "1",
+			"userFacebookId": "1",
+			"userProfilePic" : "/images/user.jpg",
+			"firstName": "Gbenga",
+			"lastName" : "Anifowoshe"
+		}
+	},
+	{
+		"id" : "2",
+		"postId" : "fblds",
+		"postImage": "/images/profile.jpg",
+		"user_userId": "2",
+		"title": "Beginning with python",
+		"body": "Python is like the best language right now, dont you think",
+		"updated_at": "2017-06-23T16:26:22.762Z",
+		"User":{
+			"id" : "3",
+			"userId": "3",
+			"userFacebookId": "3",
+			"userProfilePic" : "/images/user.jpg",
+			"firstName": "Toyin",
+			"lastName" : "Anifowoshe"
+		}
+	},
+	{
+		"id" : "3",
+		"postId" : "kola",
+		"postImage": "/images/profile.jpg",
+		"user_userId": "2",
+		"title": "Beginning with python",
+		"body": "Python is like the best language right now, dont you think",
+		"updated_at": "2017-06-23T16:26:22.762Z",
+		"User":{
+			"id" : "3",
+			"userId": "3",
+			"userFacebookId": "3",
+			"userProfilePic" : "/images/user.jpg",
+			"firstName": "Toyin",
+			"lastName" : "Anifowoshe"
+		}
+	}
+]
