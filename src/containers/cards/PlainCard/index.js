@@ -7,7 +7,7 @@ class PlainCard extends PureComponent{
             <div className="row">
                 <div className="col-xs-12 plainCard">
                     <div className="row">
-                        <div className="col-xs-12 cardTitle">Node js: The new beginning of the modern javascript currency</div>
+                        <div className="col-xs-12 cardTitle">{this.props.data.title}</div>
                     </div>
                     <div className="row">
                         <div className="col-xs-12">
@@ -17,7 +17,7 @@ class PlainCard extends PureComponent{
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-xs-12 cardBody">The major determinant of the NodeJs community woudl largely depend on the GoLang community ...</div>
+                        <div className="col-xs-12 cardBody">{this.props.data.body}</div>
                     </div>
                     <div className="row">
                         <div className="col-xs-12">

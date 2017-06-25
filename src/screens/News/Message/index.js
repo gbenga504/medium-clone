@@ -6,7 +6,7 @@ class Message extends PureComponent{
         return (
             <div className="row message">
                 <div className="col-xs-12 text-justify messageBody">
-                    I love my life
+                    {this.props.body}
                 </div>
             </div>
         )

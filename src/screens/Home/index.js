@@ -12,7 +12,7 @@ class Home extends PureComponent {
     this.state = {
       latestLoad: false,
       latestCount: 0,
-      latestURI: "/badoo.json",
+      latestURI: "/badoo2.json",
       latestData: []
     };
     this.loadMore = this.loadMore.bind(this);

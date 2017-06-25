@@ -10,6 +10,10 @@
     background: #f0f0f0;
 }
 
+#writersImage{
+    border-radius: 50%;
+}
+
 #commenter_info{
     position: absolute;
     margin-left: 100px;

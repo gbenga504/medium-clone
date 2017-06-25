@@ -6,7 +6,7 @@ class Title extends PureComponent{
         return (
             <div className="row title">
                 <div className="col-xs-12 text-center">
-                    <span className="postTitle"> How to create a web crawler in javascript </span> 
+                    <span className="postTitle">{this.props.title}</span> 
                 </div>
             </div>
         )
