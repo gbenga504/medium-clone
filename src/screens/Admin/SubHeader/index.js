@@ -9,11 +9,11 @@ class SubHeader extends PureComponent{
                     <div className="row">
                         <div className="col-xs-2">
                             <div className="profile_image_holder">
-                                <img src="" alt="user profile image" />
+                                <img src={this.props.profile.userProfilePic} alt="user profile image" width="100%" height="100%"/>
                             </div>
                         </div>
                         <div className="col-xs-10 text-justify">
-                            <span className="user_name">Anifowoshe Gbenga David</span>
+                            <span className="user_name">{this.props.profile.User ? `${this.props.profile.User.lastName} ${this.props.profile.User.firstName}` : ""}</span>
                         </div>
                     </div>
                 </div>

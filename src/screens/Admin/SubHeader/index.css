@@ -14,6 +14,10 @@
     background: #E5E5E5;
 }
 
+.profile_image_holder img {
+    border-radius: 50%;
+}
+
 .user_name{
     font-family: Raleway;
     font-size: 30px;
