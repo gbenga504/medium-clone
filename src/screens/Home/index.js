@@ -16,8 +16,6 @@ class Home extends PureComponent {
       latestData: []
     };
     this.loadMore = this.loadMore.bind(this);
-    this.callLoadMoreNews = this.callLoadMoreNews.bind(this);
-    this.composeFetch = this.composeFetch.bind(this);
   }
 
   componentDidMount() {
@@ -38,10 +36,13 @@ class Home extends PureComponent {
   }
 
   loadMore(topic) {
-    let URI = null,
-        API_FETCH = this.composeFetch(topic);
-        
-    API_FETCH.then(data => {
+    let URI = null;
+
+    Fetch(`${this.state.latestURI}?start=${this.state.latestCount}`, {
+      method: "Get",
+      handleResponseAs: "json"
+    })
+    .then(data => {
         this.setState((prevState, prevProps)=>{
             return {
               latestData : data,
@@ -60,16 +61,6 @@ class Home extends PureComponent {
     })
   }
 
-  composeFetch(topic) {
-    let fetch = null,
-        extraInfo = {method: "Get",handleResponseAs: "json"};
-
-      if(topic === "latest") return Fetch(`${this.state.latestURI}?start=${this.state.latestCount}`, extraInfo);
-  }
-
-  callLoadMoreNews() {
-    this.loadMore("latest");
-  }
 
   render() {
     return (
@@ -78,7 +69,7 @@ class Home extends PureComponent {
           <div className="col-xs-12">
             <Header color="#FBFCFD" />
             <Headlines title="Latest News">
-              <TextRight title="More" onClick={this.callLoadMoreNews} />
+              <TextRight title="More" onClick={this.loadMore} />
             </Headlines>
             <Section data={this.state.latestData} isDataLoading={this.state.latestLoad} />
           </div>

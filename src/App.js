@@ -28,10 +28,4 @@ class App extends Component {
   }
 }
 
-
-          // <Route component={Post} path="/post"/>
-          // <Route component={News} path="/news"/>
-          // <Route component={Search} path="/search"/>
-          // <Route component={Authentication} path="/admin"/>
-          // <Route component={Admin} path="/panel"/>
 export default App;
