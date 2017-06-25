@@ -1,6 +1,5 @@
-import FlatCard from './FlatCard';
-import PlainCard from './PlainCard';
-import MaterialCard from './MaterialCard';
+import FlatCard from "./FlatCard";
+import PlainCard from "./PlainCard";
+import MaterialCard from "./MaterialCard";
 
-
-export {FlatCard, PlainCard, MaterialCard};
+export { FlatCard, PlainCard, MaterialCard };

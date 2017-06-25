@@ -1,85 +1,86 @@
-import React, {PureComponent} from 'react';
-import Header from '../../containers/Header';
-import {ContainerLayout} from '../../containers/Layout';
-import SubHeader from './SubHeader';
-import {MaterialCard} from '../../containers/cards';
-import Linking from '../../containers/Linking';
-import {Fetch} from '../../containers/Request';
+import React, { PureComponent } from "react";
+import Header from "../../containers/Header";
+import { ContainerLayout } from "../../containers/Layout";
+import SubHeader from "./SubHeader";
+import { MaterialCard } from "../../containers/cards";
+import Linking from "../../containers/Linking";
+import { Fetch } from "../../containers/Request";
 
-class Admin extends PureComponent{
-    constructor(props){
-        super(props);
-        this.state = {
-            profileURI : '',
-            profile: {},
-            post: [],
-            deleteURI: '',
-        }
-        this.deletePost = this.deletePost.bind(this);
-    }
+class Admin extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      profileURI: "",
+      profile: {},
+      post: [],
+      deleteURI: ""
+    };
+    this.deletePost = this.deletePost.bind(this);
+  }
 
-    componentDidMount(){
-        Fetch(`${this.state.profileURI}`,{
-            method: 'GET',
-            handleResponseAs: 'json'
-        })
-        .then(data => {
-            this.setState({
-                profile : data['profile'],
-                post: data['post']
-            })
-        })
-        .catch(error => {
-            console.log('An error occurred while trying to read info from the database');
-        })
-    }
+  componentDidMount() {
+    Fetch(`${this.state.profileURI}`, {
+      method: "GET",
+      handleResponseAs: "json"
+    })
+      .then(data => {
+        this.setState({
+          profile: data["profile"],
+          post: data["post"]
+        });
+      })
+      .catch(error => {
+        console.log(
+          "An error occurred while trying to read info from the database"
+        );
+      });
+  }
 
-    deletePost(postId){
-        Fetch(`${this.state.deleteURI}?delete=${postId}`, {
-            method : "Post",
-            handleResponseAs: "json",
-        })
-        .then(data => {
-            if(data.type == "success"){
-                //reset state to match new data 
-                let updatedPost = this.state.post.filter(item => {
-                    return item.postId != postId;
-                })
-                this.setState({
-                    post : updatedPost,
-                })
-            }
-            else{
-                console.warn("data was not deleted");
-            }
-        })
-    }
+  deletePost(postId) {
+    Fetch(`${this.state.deleteURI}?delete=${postId}`, {
+      method: "Post",
+      handleResponseAs: "json"
+    }).then(data => {
+      if (data.type == "success") {
+        //reset state to match new data
+        let updatedPost = this.state.post.filter(item => {
+          return item.postId != postId;
+        });
+        this.setState({
+          post: updatedPost
+        });
+      } else {
+        console.warn("data was not deleted");
+      }
+    });
+  }
 
-    render(){
-        return (
-            <div className="row" style={{height:"100%"}}>
-                <div className="col-xs-12" style={{height:"100%"}}>
-                    <Header color={"#fff"}/>
-                    <SubHeader profile={this.state.profile}/>
-                    <ContainerLayout color="#F4F4EF">
-                        <div className="row">
-                            <div className="col-xs-12 col-sm-6" style={{backgroundColor: "#F4F4EF"}}>
-                                {
-                                    this.state.post.map(data => {
-                                        return (
-                                            <Linking to={`/news/${data.id}`}>
-                                                <MaterialCard data={data} deletePost={this.deletePost}/>
-                                            </Linking>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-                    </ContainerLayout>
-                </div>
-            </div>  
-        )
-    }
+  render() {
+    return (
+      <div className="row" style={{ height: "100%" }}>
+        <div className="col-xs-12" style={{ height: "100%" }}>
+          <Header color={"#fff"} />
+          <SubHeader profile={this.state.profile} />
+          <ContainerLayout color="#F4F4EF">
+            <div className="row">
+              <div
+                className="col-xs-12 col-sm-6"
+                style={{ backgroundColor: "#F4F4EF" }}
+              >
+                {this.state.post.map(data => {
+                  return (
+                    <Linking to={`/news/${data.id}`}>
+                      <MaterialCard data={data} deletePost={this.deletePost} />
+                    </Linking>
+                  );
+                })}
+              </div>
+            </div>
+          </ContainerLayout>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Admin;

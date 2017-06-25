@@ -12,20 +12,19 @@ class News extends PureComponent {
     super(props);
     this.state = {
       dataURI: "/badoo.json",
-      mainData: {},
+      mainData: {}
     };
   }
 
   componentDidMount() {
-      Fetch(this.state.dataURI, {
-          method: "Get",
-          handleResponseAs: "json"
-      })
-      .then(data => {
-          this.setState({
-              mainData: data
-          })
+    Fetch(this.state.dataURI, {
+      method: "Get",
+      handleResponseAs: "json"
+    }).then(data => {
+      this.setState({
+        mainData: data
       });
+    });
   }
 
   render() {
@@ -35,9 +34,21 @@ class News extends PureComponent {
           <ContainerLayout color="#fff">
             <div className="row">
               <div className="col-xs-12">
-                <Info writersImage={this.state.mainData.User ? this.state.mainData.User.userProfilePic : ""} writerName={this.state.mainData.User ? `${this.state.mainData.User.firstName} ${this.state.mainData.User.lastName}` : ""} timePosted={this.state.mainData.updated_at}/>
+                <Info
+                  writersImage={
+                    this.state.mainData.User
+                      ? this.state.mainData.User.userProfilePic
+                      : ""
+                  }
+                  writerName={
+                    this.state.mainData.User
+                      ? `${this.state.mainData.User.firstName} ${this.state.mainData.User.lastName}`
+                      : ""
+                  }
+                  timePosted={this.state.mainData.updated_at}
+                />
                 <Title title={this.state.mainData.title} />
-                <Message body={this.state.mainData.body}/>
+                <Message body={this.state.mainData.body} />
                 <AltIcon />
               </div>
             </div>

@@ -13,7 +13,9 @@ class Header extends PureComponent {
         <div className="col-xs-offset-4 col-xs-6">
           <div id="section-icon-header-positioner">
             <div id="header-right-section">
-              <Linking to="/post" style={{color:"#2196f3"}}>Make Post</Linking>
+              <Linking to="/post" style={{ color: "#2196f3" }}>
+                Make Post
+              </Linking>
             </div>
             <div id="iconHolder">
               <Linking to="/search">

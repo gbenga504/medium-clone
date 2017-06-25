@@ -26,16 +26,19 @@ class Search extends PureComponent {
       this.setState({
         isDataLoading: true
       });
-      Fetch(`${this.state.searchURI}?search=${searchValue}&start=${this.state.startData}`, {
-        method: "Get",
-        handleResponseAs: "json"
-      })
+      Fetch(
+        `${this.state.searchURI}?search=${searchValue}&start=${this.state.startData}`,
+        {
+          method: "Get",
+          handleResponseAs: "json"
+        }
+      )
         .then(data => {
           this.setState((prevState, prevProps) => {
             return {
               searchData: data,
               isDataLoading: false,
-              startData: prevState.startData + data.length,
+              startData: prevState.startData + data.length
             };
           });
         })

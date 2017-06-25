@@ -1,4 +1,4 @@
-import ContainerLayout from './ContainerLayout';
-import HeaderLayout from './HeaderLayout';
+import ContainerLayout from "./ContainerLayout";
+import HeaderLayout from "./HeaderLayout";
 
-export {ContainerLayout, HeaderLayout};
+export { ContainerLayout, HeaderLayout };

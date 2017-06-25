@@ -1,3 +1,3 @@
-import CircularLoader from './CircularLoader';
+import CircularLoader from "./CircularLoader";
 
-export {CircularLoader};
+export { CircularLoader };

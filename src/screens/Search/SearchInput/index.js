@@ -2,9 +2,9 @@ import React, { PureComponent } from "react";
 import "./index.css";
 
 class SearchInput extends PureComponent {
-  keyPress(ev){
+  keyPress(ev) {
     let searchValue = this.inputRef.value;
-    this.props.onKeyPress(ev,searchValue);
+    this.props.onKeyPress(ev, searchValue);
   }
 
   render() {
@@ -13,10 +13,12 @@ class SearchInput extends PureComponent {
         <input
           autoFocus
           type="text"
-          ref = {(ref) => {this.inputRef = ref;}}
+          ref={ref => {
+            this.inputRef = ref;
+          }}
           placeholder="Enter a search item"
           id="searchInput"
-          onKeyPress={(ev) => this.keyPress(ev)}
+          onKeyPress={ev => this.keyPress(ev)}
         />
       </div>
     );

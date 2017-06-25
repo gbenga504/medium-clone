@@ -42,25 +42,24 @@ class Home extends PureComponent {
       method: "Get",
       handleResponseAs: "json"
     })
-    .then(data => {
-        this.setState((prevState, prevProps)=>{
-            return {
-              latestData : data,
-              latestLoad : false,
-              latestCount : prevState.latestCount + data.length,
-            }
-        });  
-    })
-    .catch(error => {
-        this.setState({latestLoad: false})
+      .then(data => {
+        this.setState((prevState, prevProps) => {
+          return {
+            latestData: data,
+            latestLoad: false,
+            latestCount: prevState.latestCount + data.length
+          };
+        });
+      })
+      .catch(error => {
+        this.setState({ latestLoad: false });
         console.log("An error occurred in fetching information", error);
-    })
+      });
 
     this.setState({
-        latestLoad : true,
-    })
+      latestLoad: true
+    });
   }
-
 
   render() {
     return (
@@ -71,7 +70,10 @@ class Home extends PureComponent {
             <Headlines title="Latest News">
               <TextRight title="More" onClick={this.loadMore} />
             </Headlines>
-            <Section data={this.state.latestData} isDataLoading={this.state.latestLoad} />
+            <Section
+              data={this.state.latestData}
+              isDataLoading={this.state.latestLoad}
+            />
           </div>
         </div>
         <StaticFooter />
