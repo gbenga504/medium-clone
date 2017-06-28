@@ -8,7 +8,7 @@
 // Global Name which would change based on user specification of how the response should be gotten
 let HANDLE_RESPONSE_AS = null;
 
-const Fetch = (url, { method, handleResponseAs, headers }, body) => {
+const httpFetch = (url, { method, handleResponseAs, headers }, body) => {
   let API_HEADER = ManageHeader(headers), API_BODY = ManageBody(body);
 
   HANDLE_RESPONSE_AS = handleResponseAs;
@@ -81,4 +81,4 @@ const ManageBody = body => {
   return returnedBody;
 };
 
-export default Fetch;
+export default httpFetch;

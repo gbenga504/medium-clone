@@ -1,3 +1,3 @@
-import Fetch from "./Fetch";
+import httpFetch from "./Fetch";
 
-export { Fetch };
+export { httpFetch};

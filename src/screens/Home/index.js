@@ -4,7 +4,7 @@ import Header from "../../containers/Header";
 import { Headlines, TextRight, ButtonRight } from "./Headlines";
 import Section from "./Section";
 import { StaticFooter } from "../../containers/Footer";
-import { Fetch } from "../../containers/Request";
+import { httpFetch } from "../../containers/Request";
 
 class Home extends PureComponent {
   constructor(props) {
@@ -19,7 +19,7 @@ class Home extends PureComponent {
   }
 
   componentDidMount() {
-    Fetch(this.state.latestURI, {
+    httpFetch(this.state.latestURI, {
       method: "Get",
       handleResponseAs: "json"
     })
@@ -38,7 +38,7 @@ class Home extends PureComponent {
   loadMore(topic) {
     let URI = null;
 
-    Fetch(`${this.state.latestURI}?start=${this.state.latestCount}`, {
+    httpFetch(`${this.state.latestURI}?start=${this.state.latestCount}`, {
       method: "Get",
       handleResponseAs: "json"
     })

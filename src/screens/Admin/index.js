@@ -4,7 +4,7 @@ import { ContainerLayout } from "../../containers/Layout";
 import SubHeader from "./SubHeader";
 import { MaterialCard } from "../../containers/cards";
 import Linking from "../../containers/Linking";
-import { Fetch } from "../../containers/Request";
+import { httpFetch } from "../../containers/Request";
 
 class Admin extends PureComponent {
   constructor(props) {
@@ -19,7 +19,7 @@ class Admin extends PureComponent {
   }
 
   componentDidMount() {
-    Fetch(`${this.state.profileURI}`, {
+    httpFetch(`${this.state.profileURI}`, {
       method: "GET",
       handleResponseAs: "json"
     })
@@ -37,7 +37,7 @@ class Admin extends PureComponent {
   }
 
   deletePost(postId) {
-    Fetch(`${this.state.deleteURI}?delete=${postId}`, {
+    httpFetch(`${this.state.deleteURI}?delete=${postId}`, {
       method: "Post",
       handleResponseAs: "json"
     }).then(data => {

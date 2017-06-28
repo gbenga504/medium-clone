@@ -3,7 +3,7 @@ import { ContainerLayout } from "../../containers/Layout";
 import Header from "../../containers/Header";
 import SearchInput from "./SearchInput";
 import Result from "./Result";
-import { Fetch } from "../../containers/Request";
+import { httpFetch } from "../../containers/Request";
 
 class Search extends PureComponent {
   constructor(props) {
@@ -26,7 +26,7 @@ class Search extends PureComponent {
       this.setState({
         isDataLoading: true
       });
-      Fetch(
+      httpFetch(
         `${this.state.searchURI}?search=${searchValue}&start=${this.state.startData}`,
         {
           method: "Get",

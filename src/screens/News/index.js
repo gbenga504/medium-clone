@@ -5,19 +5,20 @@ import Title from "./Title";
 import Message from "./Message";
 import AltIcon from "./AltIcon";
 import PostFooter from "./PostFooter";
-import { Fetch } from "../../containers/Request";
+import { httpFetch } from "../../containers/Request";
 
 class News extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       dataURI: "/badoo.json",
-      mainData: {}
+      moreNewsURI: "",
+      mainData: {},
     };
   }
 
   componentDidMount() {
-    Fetch(this.state.dataURI, {
+    httpFetch(this.state.dataURI, {
       method: "Get",
       handleResponseAs: "json"
     }).then(data => {
@@ -25,6 +26,11 @@ class News extends PureComponent {
         mainData: data
       });
     });
+
+    httpFetch(`${this.state.moreNewsURI}?len=2`, {
+      method: "Get",
+      handleResponseAs: "json"
+    }).then
   }
 
   render() {
