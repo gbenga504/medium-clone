@@ -14,7 +14,7 @@ class MaterialCard extends PureComponent {
           <div className="row">
             <div className="col-xs-12 post_image">
               <img
-                src={this.props.data.User.userProfilePic}
+                src={this.props.data.postImage}
                 alt="new post image"
               />
             </div>
@@ -28,9 +28,6 @@ class MaterialCard extends PureComponent {
             <div className="col-xs-12">
               <div className="recommend_btn">
                 <span className="recommended_tag">23 recommended</span>
-                {" "}
-                &nbsp; &nbsp;
-                {" "}
                 <img
                   src="/images/recommend.png"
                   alt="recommend"
@@ -41,14 +38,11 @@ class MaterialCard extends PureComponent {
                 <img
                   src="/images/edit.png"
                   onClick={() => {
-                    this.props.deletePost(`${this.props.data.postId}`);
+                    this.props.deletePost(`${this.props.data.id}`);
                   }}
                   alt="edit_btn"
                   className="recommend_img"
                 />
-                {" "}
-                &nbsp; &nbsp; &nbsp;
-                {" "}
                 <img
                   src="/images/remove.png"
                   alt="delete_btn"

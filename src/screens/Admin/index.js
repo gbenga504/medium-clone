@@ -11,9 +11,9 @@ class Admin extends PureComponent {
     super(props);
     this.state = {
       profileURI: "",
-      profile: {},
-      post: [],
-      deleteURI: ""
+      adminData: {},
+      posts: [],
+      deleteURI: "",
     };
     this.deletePost = this.deletePost.bind(this);
   }
@@ -24,10 +24,14 @@ class Admin extends PureComponent {
       handleResponseAs: "json"
     })
       .then(data => {
-        this.setState({
-          profile: data["profile"],
-          post: data["post"]
-        });
+        if(data.status == "error") return Promise.reject(data.message)
+        else {
+          let admin_data = data.data;
+          this.setState({
+            adminData : {userProfilePic: admin_data.userProfilePic, firstName: admin_data.firstName, lastName: admin_data.lastName},
+            posts: admin_data.Posts,
+          })
+        }
       })
       .catch(error => {
         console.log(
@@ -37,11 +41,11 @@ class Admin extends PureComponent {
   }
 
   deletePost(postId) {
-    httpFetch(`${this.state.deleteURI}?delete=${postId}`, {
+    httpFetch(`${this.state.deleteURI}/${postId}`, {
       method: "Post",
-      handleResponseAs: "json"
+      handleResponseAs: "json",
     }).then(data => {
-      if (data.type == "success") {
+      if (data.status == "success") {
         //reset state to match new data
         let updatedPost = this.state.post.filter(item => {
           return item.postId != postId;
@@ -60,14 +64,14 @@ class Admin extends PureComponent {
       <div className="row" style={{ height: "100%" }}>
         <div className="col-xs-12" style={{ height: "100%" }}>
           <Header color={"#fff"} />
-          <SubHeader profile={this.state.profile} />
+          <SubHeader profile={this.state.adminData} />
           <ContainerLayout color="#F4F4EF">
             <div className="row">
               <div
                 className="col-xs-12 col-sm-6"
                 style={{ backgroundColor: "#F4F4EF" }}
               >
-                {this.state.post.map(data => {
+                {this.state.posts.map(data => {
                   return (
                     <Linking to={`/news/${data.id}`}>
                       <MaterialCard data={data} deletePost={this.deletePost} />

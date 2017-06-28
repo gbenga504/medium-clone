@@ -19,8 +19,8 @@ class SubHeader extends PureComponent {
             </div>
             <div className="col-xs-10 text-justify">
               <span className="user_name">
-                {this.props.profile.User
-                  ? `${this.props.profile.User.lastName} ${this.props.profile.User.firstName}`
+                {this.props.profile
+                  ? `${this.props.profile.lastName} ${this.props.profile.firstName}`
                   : ""}
               </span>
             </div>
