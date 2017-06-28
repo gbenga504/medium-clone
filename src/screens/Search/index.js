@@ -27,7 +27,7 @@ class Search extends PureComponent {
         isDataLoading: true
       });
       httpFetch(
-        `${this.state.searchURI}?search=${searchValue}&start=${this.state.startData}`,
+        `${this.state.searchURI}?q=${searchValue}&start=${this.state.startData}&len=7`,
         {
           method: "Get",
           handleResponseAs: "json"
@@ -38,7 +38,7 @@ class Search extends PureComponent {
             return {
               searchData: data,
               isDataLoading: false,
-              startData: prevState.startData + data.length
+              startData: prevState.startData + data.length,
             };
           });
         })

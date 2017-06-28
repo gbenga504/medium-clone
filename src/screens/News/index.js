@@ -14,6 +14,7 @@ class News extends PureComponent {
       dataURI: "/badoo.json",
       moreNewsURI: "",
       mainData: {},
+      moreNewsData: []
     };
   }
 
@@ -30,7 +31,15 @@ class News extends PureComponent {
     httpFetch(`${this.state.moreNewsURI}?len=2`, {
       method: "Get",
       handleResponseAs: "json"
-    }).then
+    })
+      .then(data => {
+        this.setState({
+          moreNewsData: data
+        });
+      })
+      .catch(error => {
+        console.log("An error occurred while trying to get information");
+      });
   }
 
   render() {
@@ -59,7 +68,7 @@ class News extends PureComponent {
               </div>
             </div>
           </ContainerLayout>
-          {/*<PostFooter />*/}
+          <PostFooter data={this.state.moreNewsData} />
         </div>
       </div>
     );

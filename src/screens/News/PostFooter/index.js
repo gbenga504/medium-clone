@@ -8,7 +8,7 @@ class PostFooter extends Component {
       <div className="row">
         <div className="footer row">
           <div className="col-xs-12">
-            <Section />
+            <Section data={this.props.data}/>
           </div>
         </div>
       </div>

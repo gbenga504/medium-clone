@@ -8,12 +8,15 @@ class Section extends PureComponent {
       <div className="row" style={{ marginTop: 50 }}>
         <div className="col-xs-12">
           <div className="row">
-            <Linking to="/news/5">
-              <FlatCard />
-            </Linking>
-            <Linking to="/news/5">
-              <FlatCard />
-            </Linking>
+            {
+              this.props.data.map(data => {
+                return (
+                  <Linking to={`/news/${data.id}`}>
+                      <FlatCard data={data}/>
+                  </Linking>
+                )
+              })
+            }
           </div>
         </div>
       </div>
