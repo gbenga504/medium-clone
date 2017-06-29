@@ -7,7 +7,8 @@ class Form extends PureComponent {
     return (
       <form className="row form">
         <div className="col-xs-12">
-          <TitleBox />
+          <TitleBox readImage={this.props.onReadImage}/>
+          <DisplayImage displayImageURI={this.props.displayImageURI}/>
           <PostBox />
         </div>
       </form>
@@ -17,9 +18,9 @@ class Form extends PureComponent {
 
 const DisplayImage = (props) => {
   return(
-    <div className="row">
+    <div className="row" style={props.displayImageURI ? {display: 'block'} : {display: 'none'}}>
       <div className="col-xs-12 col-sm-offset-3 col-sm-6">
-        <img src="" alt="post display image" className="displayImage"/>
+        <img src={props.displayImageURI} alt="post display image" className="displayImage"/>
       </div>
     </div>
   )
@@ -36,7 +37,7 @@ const ImageSelector = () => {
 const TitleBox = (props) => {
   return (
     <div className="row titleBox">
-      <input type="file" className="selectorInputFile" />
+      <input type="file" className="selectorInputFile" onChange={props.readImage}/>
       <ImageSelector />
       <input type="text" placeholder="Enter a title" id="titleInput" />
     </div>
