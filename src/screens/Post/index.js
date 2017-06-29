@@ -3,19 +3,34 @@ import { ContainerLayout } from "../../containers/Layout";
 import { NavigationalFooter } from "../../containers/Footer";
 import Header from "./Header";
 import Form from "./Form";
+import {httpFetch} from '../../containers/Request';
 
 class Post extends PureComponent {
   constructor(props){
     super(props);
     this.state = {
       displayImageURI : null,
+      postURI: '',
       bodyHTML : '',
       formRef: null,
     }
   }
 
   makePost = () => {
-    
+    httpFetch(this.state.postURI, {
+      handleResponseAs : "json",
+      method: "Post",
+      body: new FormData(this.state.formRef),
+    })
+    .then(response => {
+        if(response.status == "message")
+          console.log("success");
+        else
+          return Promise.reject(response.message);
+    })
+    .catch(error => {
+        console.log("An error occurred while trying to make post");
+    })
   }
 
   readImage = (evt) => {
