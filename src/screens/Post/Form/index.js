@@ -9,7 +9,8 @@ class Form extends PureComponent {
         <div className="col-xs-12">
           <TitleBox readImage={this.props.onReadImage}/>
           <DisplayImage displayImageURI={this.props.displayImageURI}/>
-          <PostBox />
+          <input type="hidden" value={this.props.bodyHTML} />
+          <PostBox handleBodyChange={this.props.handleBodyChange}/>
         </div>
       </form>
     );

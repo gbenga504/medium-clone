@@ -13,6 +13,7 @@ class PostBox extends PureComponent {
           options={{toolbar: {buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote']}}}
           className="postBox"
           data-placeholder="Write your post"
+          onChange={this.props.handleBodyChange}
         />
       </div>
     );
