@@ -23,12 +23,12 @@ class Authentication extends PureComponent {
         email,
         password
       })
-    }).then (data => {
-        if(data.status == "success"){
-          window.localStorage.setItem('user_details', JSON.stringify(data.data));
+    }).then (response => {
+        if(response.status == "success"){
+          window.localStorage.setItem('user_details', JSON.stringify(response.data));
           this.props.history.push('/loggedIn');
         }
-        else return Promise.reject(data.message);
+        else return Promise.reject(response.message);
     }).catch(error => {
         console.log("An error occurred while trying to rerieve data");
     })

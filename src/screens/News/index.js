@@ -22,20 +22,29 @@ class News extends PureComponent {
     httpFetch(this.state.dataURI, {
       method: "Get",
       handleResponseAs: "json"
-    }).then(data => {
-      this.setState({
-        mainData: data
-      });
-    });
+    }).then(response => {
+      if(response.status == 'success')
+        this.setState({
+          mainData: response.data
+        });
+      else 
+        Promise.reject(response.message);
+    }).catch(error => {
+      console.log('An error occurred while tryign to retrieve data');
+    })
+
 
     httpFetch(`${this.state.moreNewsURI}?len=2`, {
       method: "Get",
       handleResponseAs: "json"
     })
-      .then(data => {
-        this.setState({
-          moreNewsData: data
-        });
+      .then(response => {
+        if(response.status == 'success')
+          this.setState({
+            moreNewsData: response.data
+          });
+        else 
+          Promise.reject(response.message);
       })
       .catch(error => {
         console.log("An error occurred while trying to get information");

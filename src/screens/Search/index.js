@@ -33,14 +33,18 @@ class Search extends PureComponent {
           handleResponseAs: "json"
         }
       )
-        .then(data => {
-          this.setState((prevState, prevProps) => {
-            return {
-              searchData: data,
-              isDataLoading: false,
-              startData: prevState.startData + data.length,
-            };
-          });
+        .then(response => {
+          if(response.status == 'success')
+            this.setState((prevState, prevProps) => {
+              return {
+                searchData: response.data,
+                isDataLoading: false,
+                startData: prevState.startData + response.data.length,
+              };
+            });
+          else {
+            
+          }
         })
         .catch(error => {
           this.setState({ isDataLoading: false });

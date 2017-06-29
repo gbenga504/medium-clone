@@ -23,12 +23,15 @@ class Home extends PureComponent {
       method: "Get",
       handleResponseAs: "json"
     })
-      .then(data => {
-        this.setState({
-          latestData: data,
-          latestCount: data.length,
-          latestLoad: false
-        });
+      .then(response => {
+        if(response.status == "success")
+          this.setState({
+            latestData: response.data,
+            latestCount: response.data.length,
+            latestLoad: false
+          });
+        else 
+          Promise.reject(response.message);
       })
       .catch(error => {
         console.log("An error occurred in fetching information", error);
@@ -42,14 +45,17 @@ class Home extends PureComponent {
       method: "Get",
       handleResponseAs: "json"
     })
-      .then(data => {
-        this.setState((prevState, prevProps) => {
-          return {
-            latestData: data,
-            latestLoad: false,
-            latestCount: prevState.latestCount + data.length
-          };
-        });
+      .then(response => {
+        if(response.status == 'success')
+          this.setState((prevState, prevProps) => {
+            return {
+              latestData: response.data,
+              latestLoad: false,
+              latestCount: prevState.latestCount + response.data.length
+            };
+          });
+        else 
+          Promise.reject(response.message);
       })
       .catch(error => {
         this.setState({ latestLoad: false });

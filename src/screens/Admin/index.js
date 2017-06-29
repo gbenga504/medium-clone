@@ -23,10 +23,10 @@ class Admin extends PureComponent {
       method: "GET",
       handleResponseAs: "json"
     })
-      .then(data => {
-        if(data.status == "error") return Promise.reject(data.message)
+      .then(response => {
+        if(response.status == "error") return Promise.reject(response.message)
         else {
-          let admin_data = data.data;
+          let admin_data = response.data;
           this.setState({
             adminData : {userProfilePic: admin_data.userProfilePic, firstName: admin_data.firstName, lastName: admin_data.lastName},
             posts: admin_data.Posts,
@@ -44,8 +44,8 @@ class Admin extends PureComponent {
     httpFetch(`${this.state.deleteURI}/${postId}`, {
       method: "Post",
       handleResponseAs: "json",
-    }).then(data => {
-      if (data.status == "success") {
+    }).then(response => {
+      if (response.status == "success") {
         //reset state to match new data
         let updatedPost = this.state.post.filter(item => {
           return item.postId != postId;

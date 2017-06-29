@@ -17,7 +17,6 @@ class Post extends PureComponent {
   }
 
   makePost = () => {
-    console.log(5);
     httpFetch(this.state.postURI, {
       handleResponseAs : "json",
       method: "Post",
@@ -27,7 +26,7 @@ class Post extends PureComponent {
         if(response.status == "message")
           console.log("success");
         else
-          return Promise.reject(response.message);
+          Promise.reject(response.message);
     })
     .catch(error => {
         console.log("An error occurred while trying to make post");
