@@ -2,8 +2,8 @@
     height: 70px;
 }
 
-#messageInput{
-    height: 100%;
+.postBox{
+    height: auto;
     width: 100%;
     padding-top: 5px;
     font-family: MidRaleway;
@@ -11,7 +11,6 @@
     font-style: normal;
     border: 0px solid transparent;
     color: #000;
-    font-weight: bold;
     padding-left: 10px;
 }
 
