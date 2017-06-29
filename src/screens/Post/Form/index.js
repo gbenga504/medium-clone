@@ -19,7 +19,7 @@ const DisplayImage = (props) => {
   return(
     <div className="row">
       <div className="col-xs-12 col-sm-offset-3 col-sm-6">
-        <img src={} alt="post display image" className="displayImage"/>
+        <img src="" alt="post display image" className="displayImage"/>
       </div>
     </div>
   )
@@ -36,6 +36,8 @@ const ImageSelector = () => {
 const TitleBox = (props) => {
   return (
     <div className="row titleBox">
+      <input type="file" className="selectorInputFile" />
+      <ImageSelector />
       <input type="text" placeholder="Enter a title" id="titleInput" />
     </div>
   );

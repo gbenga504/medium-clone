@@ -39,11 +39,31 @@
 }
 
 .imageSelector{
+    position: absolute;
+    right: 0px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 1px solid #333;
-    
+    top: 18px;
+    text-align: center;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.selectorInputFile{
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    opacity: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.imageSelector img{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
 }
 
 ::-webkit-input-placeholder{
