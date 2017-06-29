@@ -3,9 +3,13 @@ import PostBox from "../../../containers/PostBox";
 import "./index.css";
 
 class Form extends PureComponent {
+  componentDidMount(){
+    this.props.onupdateFormRef(this.formRef);
+  }
+
   render() {
     return (
-      <form className="row form">
+      <form className="row form" ref={(ref) => this.formRef = ref }>
         <div className="col-xs-12">
           <TitleBox readImage={this.props.onReadImage}/>
           <DisplayImage displayImageURI={this.props.displayImageURI}/>

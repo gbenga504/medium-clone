@@ -10,7 +10,12 @@ class Post extends PureComponent {
     this.state = {
       displayImageURI : null,
       bodyHTML : '',
+      formRef: null,
     }
+  }
+
+  makePost = () => {
+    
   }
 
   readImage = (evt) => {
@@ -20,6 +25,11 @@ class Post extends PureComponent {
       this.setState({displayImageURI: fileReader.result});
     }
     fileReader.readAsDataURL(file);
+  }
+
+  updateFormRef = (value) => {
+    if(!this.state.formRef)
+      this.setState({formRef : value})
   }
 
   handleBodyChange = (text, medium) => {
@@ -36,7 +46,7 @@ class Post extends PureComponent {
           <ContainerLayout color="#fff">
             <div className="row">
               <div className="col-xs-12">
-                <Form onReadImage={this.readImage} bodyHTML={this.state.bodyHTML} displayImageURI={this.state.displayImageURI} handleBodyChange={this.handleBodyChange}/>
+                <Form onReadImage={this.readImage} onupdateFormRef={this.updateFormRef} bodyHTML={this.state.bodyHTML} displayImageURI={this.state.displayImageURI} handleBodyChange={this.handleBodyChange}/>
               </div>
             </div>
           </ContainerLayout>
