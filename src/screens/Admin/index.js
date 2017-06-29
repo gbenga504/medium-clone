@@ -4,7 +4,7 @@ import { ContainerLayout } from "../../containers/Layout";
 import SubHeader from "./SubHeader";
 import { MaterialCard } from "../../containers/cards";
 import Linking from "../../containers/Linking";
-import { httpFetch } from "../../containers/Request";
+import {httpFetch} from "../../containers/Request";
 
 class Admin extends PureComponent {
   constructor(props) {
