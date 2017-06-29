@@ -15,10 +15,20 @@ class Form extends PureComponent {
           <DisplayImage displayImageURI={this.props.displayImageURI}/>
           <input type="hidden" value={this.props.bodyHTML} />
           <PostBox handleBodyChange={this.props.handleBodyChange}/>
+          <SecuredField userDetails={this.props.userDetails}/>
         </div>
       </form>
     );
   }
+}
+
+const SecuredField = (props) => {
+  return (
+    <div>
+      <input type="hidden" name="userId"  value={props.userDetails.userId}/>
+      <input type="hidden" name="secureKey" value={props.userDetails.userId}/>
+    </div>
+  )
 }
 
 const DisplayImage = (props) => {

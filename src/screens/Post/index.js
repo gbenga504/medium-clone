@@ -13,6 +13,7 @@ class Post extends PureComponent {
       postURI: '',
       bodyHTML : '',
       formRef: null,
+      userDetails: {},
     }
   }
 
@@ -31,6 +32,10 @@ class Post extends PureComponent {
     .catch(error => {
         console.log("An error occurred while trying to make post");
     })
+
+    let userDetails = window.localStorage.getItem('user_details'),
+        parsedUserDetails = JSON.parse(userDetails);
+    this.setState({userDetails: parsedUserDetails});
   }
 
   readImage = (evt) => {
@@ -61,12 +66,12 @@ class Post extends PureComponent {
           <ContainerLayout color="#fff">
             <div className="row">
               <div className="col-xs-12">
-                <Form onReadImage={this.readImage} onupdateFormRef={this.updateFormRef} bodyHTML={this.state.bodyHTML} displayImageURI={this.state.displayImageURI} handleBodyChange={this.handleBodyChange}/>
+                <Form userDetails={this.state.userDetails} onReadImage={this.readImage} onupdateFormRef={this.updateFormRef} bodyHTML={this.state.bodyHTML} displayImageURI={this.state.displayImageURI} handleBodyChange={this.handleBodyChange}/>
               </div>
             </div>
           </ContainerLayout>
         </div>
-        {/*<NavigationalFooter />*/}
+        <NavigationalFooter />
       </div>
     );
   }
