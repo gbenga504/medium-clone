@@ -1,5 +1,8 @@
 import React, { PureComponent } from "react";
 
+/**
+ * @Component TextRight renders a textual based right component
+ */
 class TextRight extends PureComponent {
   render() {
     return (
@@ -10,9 +13,7 @@ class TextRight extends PureComponent {
             onClick={this.props.onClick}
           >
             {this.props.title}
-            {" "}
             &nbsp;
-            {" "}
             <img
               src="/images/forward.png"
               alt="backButton"
@@ -25,6 +26,9 @@ class TextRight extends PureComponent {
   }
 }
 
+/**
+ * @Component ButtonRight renders a right button based component 
+ */
 class ButtonRight extends PureComponent {
   render() {
     return (

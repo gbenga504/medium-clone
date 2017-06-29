@@ -7,6 +7,10 @@ import { StaticFooter } from "../../containers/Footer";
 import { httpFetch } from "../../containers/Request";
 
 class Home extends PureComponent {
+  /**
+   * 
+   * @param {*} props 
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -18,26 +22,33 @@ class Home extends PureComponent {
     this.loadMore = this.loadMore.bind(this);
   }
 
+  /**
+   * Fetch Latest news information from DB 
+   */
   componentDidMount() {
     httpFetch(this.state.latestURI, {
       method: "Get",
       handleResponseAs: "json"
     })
       .then(response => {
-        if(response.status == "success")
+        if (response.status == "success")
           this.setState({
             latestData: response.data,
             latestCount: response.data.length,
             latestLoad: false
           });
-        else 
-          Promise.reject(response.message);
+        else Promise.reject(response.message);
       })
       .catch(error => {
         console.log("An error occurred in fetching information", error);
       });
   }
 
+  /**
+   * @function takes topic as params and loads more data based on the topic
+   * @param {*} topic 
+   * 
+   */
   loadMore(topic) {
     let URI = null;
 
@@ -46,7 +57,7 @@ class Home extends PureComponent {
       handleResponseAs: "json"
     })
       .then(response => {
-        if(response.status == 'success')
+        if (response.status == "success")
           this.setState((prevState, prevProps) => {
             return {
               latestData: response.data,
@@ -54,8 +65,7 @@ class Home extends PureComponent {
               latestCount: prevState.latestCount + response.data.length
             };
           });
-        else 
-          Promise.reject(response.message);
+        else Promise.reject(response.message);
       })
       .catch(error => {
         this.setState({ latestLoad: false });

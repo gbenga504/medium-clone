@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import "./index.css";
 import { TextRight, ButtonRight } from "./Right";
 
+/**
+ * @Component Headlines render an headline based on the topic and the type of button required 
+ */
 class Headlines extends PureComponent {
   constructor(props) {
     super(props);

@@ -3,6 +3,9 @@ import { FlatCard } from "../../../containers/cards";
 import Linking from "../../../containers/Linking";
 import { CircularLoader } from "../../../containers/Loaders";
 
+/**
+ * Section returns a presentational container for the actual post 
+ */
 class Section extends PureComponent {
   render() {
     return (
@@ -24,6 +27,10 @@ class Section extends PureComponent {
   }
 }
 
+/**
+ * @component LoaderContaoner renders a loader which informs user about an async running operation 
+ * @param {*} props 
+ */
 const LoaderContainer = props => {
   return (
     <div className="row">
