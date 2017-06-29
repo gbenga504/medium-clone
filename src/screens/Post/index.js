@@ -17,6 +17,7 @@ class Post extends PureComponent {
   }
 
   makePost = () => {
+    console.log(5);
     httpFetch(this.state.postURI, {
       handleResponseAs : "json",
       method: "Post",
@@ -57,7 +58,7 @@ class Post extends PureComponent {
     return (
       <div className="row">
         <div className="col-xs-12">
-          <Header />
+          <Header onMakePost={this.makePost}/>
           <ContainerLayout color="#fff">
             <div className="row">
               <div className="col-xs-12">

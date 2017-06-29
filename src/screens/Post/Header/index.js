@@ -18,7 +18,7 @@ class Header extends PureComponent {
                 share{" "}
               </div>
               <div id="iconHolder" className="col-xs-9">
-                <div id="publishBtn">publish</div>
+                <div id="publishBtn" onClick={this.props.onMakePost}>publish</div>
                 <div id="profileImage">
                   <img src="" alt="notification" id="headerIcons" />
                 </div>
