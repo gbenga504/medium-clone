@@ -71,7 +71,6 @@ class Post extends PureComponent {
             </div>
           </ContainerLayout>
         </div>
-        <NavigationalFooter />
       </div>
     );
   }

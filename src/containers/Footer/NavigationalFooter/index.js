@@ -4,7 +4,7 @@ import "./index.css";
 class NavigationalFooter extends PureComponent {
   render() {
     return (
-      <div className="navFooter">
+      <div className="row navFooter">
         <div className="col-xs-12 col-sm-offset-4 col-sm-4">
           <div className="row">
             <div className="col-xs-2">
