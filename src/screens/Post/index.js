@@ -20,6 +20,23 @@ class Post extends PureComponent {
     };
   }
 
+  componentDidMount(){
+    console.log(this.props.match.params.id);
+    httpFetch(`${this.state.postURI}/${this.props.match.params.id}`, {
+      method: "Get",
+      handleResponseAs: "json",
+    })
+    .then(response => {
+      if(response.status == 'success'){
+        
+      }
+      else Promise.reject(response.message)
+    })
+    .catch(error => {
+      console.log('An occurred while trying to get the the post information');
+    })
+  }
+
   /**
    * This function sends the form post to the server after user is done writind post
    */

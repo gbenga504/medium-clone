@@ -30,7 +30,7 @@ class Admin extends PureComponent {
     this.setState({
       makePostLinkVisible: shouldMakeVisible
     });
-    
+
     let userId = window.localStorage.getItem("user_details");
     httpFetch(`${this.state.profileURI}/${userId}`, {
       method: "Get",
