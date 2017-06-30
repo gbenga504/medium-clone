@@ -11,7 +11,7 @@ class Authentication extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      loginURI: "",
+      loginURI: "/api/v1/auth/login",
       data: {}
     };
     this.login = this.login.bind(this);

@@ -15,7 +15,7 @@ class Home extends PureComponent {
     this.state = {
       latestLoad: false,
       latestCount: 0,
-      latestURI: "/badoo2.json",
+      latestURI: "/api/v1/post",
       latestData: []
     };
   }

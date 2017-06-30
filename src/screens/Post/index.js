@@ -13,7 +13,7 @@ class Post extends PureComponent {
     super(props);
     this.state = {
       displayImageURI: null,
-      postURI: "",
+      postURI: "/api/v1/post",
       bodyHTML: "",
       formRef: null,
       userDetails: {}

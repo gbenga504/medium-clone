@@ -13,18 +13,19 @@ class Admin extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      profileURI: "",
+      profileURI: "/api/v1/user",
       adminData: {},
       posts: [],
-      deleteURI: ""
+      deleteURI: "/api/v1/post"
     };
     this.deletePost = this.deletePost.bind(this);
   }
 
   //Fetch the admin information and some posts
   componentDidMount() {
-    httpFetch(`${this.state.profileURI}`, {
-      method: "GET",
+    let userId = window.localStorage.getItem("user_details");
+    httpFetch(`${this.state.profileURI}/${userId}`, {
+      method: "Get",
       handleResponseAs: "json"
     })
       .then(response => {
@@ -54,7 +55,7 @@ class Admin extends PureComponent {
  */
   deletePost(postId) {
     httpFetch(`${this.state.deleteURI}/${postId}`, {
-      method: "Post",
+      method: "delete",
       handleResponseAs: "json"
     }).then(response => {
       if (response.status == "success") {

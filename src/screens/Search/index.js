@@ -12,7 +12,7 @@ class Search extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      searchURI: "/badoo2.json",
+      searchURI: "/api/v1/search/post",
       searchData: [],
       startData: 0,
       isDataLoading: false

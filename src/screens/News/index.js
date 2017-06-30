@@ -14,8 +14,7 @@ class News extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      dataURI: "/badoo.json",
-      moreNewsURI: "",
+      dataURI: "/api/v1/post",
       mainData: {},
       moreNewsData: []
     };
@@ -23,7 +22,7 @@ class News extends PureComponent {
 
   //Fetch the data related to the post based on Id and also other news that the user can read
   componentDidMount() {
-    httpFetch(this.state.dataURI, {
+    httpFetch(`${this.state.dataURI}/${this.props.match.params.id}`, {
       method: "Get",
       handleResponseAs: "json"
     })
@@ -38,7 +37,7 @@ class News extends PureComponent {
         console.log("An error occurred while tryign to retrieve data");
       });
 
-    httpFetch(`${this.state.moreNewsURI}?len=2`, {
+    httpFetch(`${this.state.dataURI}?len=2`, {
       method: "Get",
       handleResponseAs: "json"
     })
