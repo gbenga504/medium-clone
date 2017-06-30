@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component NavigationalFooter renders a navigational footer type 
+ */
 class NavigationalFooter extends PureComponent {
   render() {
     return (

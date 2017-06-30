@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component HeaderLayout renders a container layout to pad the header components 
+ */
 class HeaderLayout extends PureComponent {
   render() {
     return (

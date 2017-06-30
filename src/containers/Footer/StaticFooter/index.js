@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component StaticFooter renders a static footer type 
+ */
 class StaticFooter extends PureComponent {
   render() {
     return (

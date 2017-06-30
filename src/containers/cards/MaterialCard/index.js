@@ -1,7 +1,10 @@
 import React, { PureComponent } from "react";
-import Link from '../../Linking';
+import Link from "../../Linking";
 import "./index.css";
 
+/**
+ * Component MaterialCard renders a material card type 
+ */
 class MaterialCard extends PureComponent {
   render() {
     return (
@@ -14,10 +17,7 @@ class MaterialCard extends PureComponent {
           </div>
           <div className="row">
             <div className="col-xs-12 post_image">
-              <img
-                src={this.props.data.postImage}
-                alt=""
-              />
+              <img src={this.props.data.postImage} alt="" />
             </div>
           </div>
           <div className="row">

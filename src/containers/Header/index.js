@@ -7,10 +7,9 @@ import Linking from "../Linking";
  * @Component Header renders the header aspect of some part of the blog 
  */
 class Header extends PureComponent {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
-
 
   render() {
     return (
@@ -21,7 +20,14 @@ class Header extends PureComponent {
         <div className="col-xs-offset-4 col-xs-6">
           <div id="section-icon-header-positioner">
             <div id="header-right-section">
-              <Linking to="/post" style={this.props.makePostLinkVisible ? { color: "#2196f3", display:"block" } : {display : "none"}}>
+              <Linking
+                to="/post"
+                style={
+                  this.props.makePostLinkVisible
+                    ? { color: "#2196f3", display: "block" }
+                    : { display: "none" }
+                }
+              >
                 Make Post
               </Linking>
             </div>

@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component PlainCard renders a plain card type 
+ */
 class PlainCard extends PureComponent {
   render() {
     return (

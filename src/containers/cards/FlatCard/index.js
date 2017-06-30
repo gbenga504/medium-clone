@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import Bottom from "./Bottom";
 import "./index.css";
 
+/**
+ * @Component Flatcard renders a flat card type  
+ */
 class FlatCard extends PureComponent {
   constructor(props) {
     super(props);

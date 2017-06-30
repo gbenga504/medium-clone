@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import "./index.css";
 import moment from "moment";
 
+/**
+ * @Component Bottom renders the bottom segment of the card which contains user info 
+ */
 class Bottom extends PureComponent {
   render() {
     return (
@@ -17,6 +20,10 @@ class Bottom extends PureComponent {
   }
 }
 
+/**
+ * @Functional Component ImageIcon renders the display image of the writer
+ * @param {Object} props 
+ */
 const ImageIcon = props => {
   return (
     <div className="imageIcon">
@@ -30,6 +37,10 @@ const ImageIcon = props => {
   );
 };
 
+/**
+ * @Functional Component CoreInfo renders the time and writers' name 
+ * @param {String} props 
+ */
 const CoreInfo = props => {
   let time = moment(props.timePosted).format("Do MMMM YYYY");
   return (
@@ -40,6 +51,9 @@ const CoreInfo = props => {
   );
 };
 
+/**
+ * @Functional Component BottomIcon renders the bottom recommend Icon of the card 
+ */
 const BottomIcon = () => {
   return (
     <div className="bottomIcon">

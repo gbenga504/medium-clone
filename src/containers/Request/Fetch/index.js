@@ -1,13 +1,12 @@
-/**
- * 
- * @param {*} url  
- * @param {*} param @method (GET|POST), @handle (json|blob|text), @header 
- * @param {*} body (optional parameter meant to send post information)
- */
-
-// Global Name which would change based on user specification of how the response should be gotten
+// Global Name to handle response type
 let HANDLE_RESPONSE_AS = null;
 
+/**
+ * @Function handles all fetch request of the application 
+ * @param {String} url 
+ * @param {Object} param1 ({method:String | handleResponseAS: String | headers: Object})
+ * @param {String} body 
+ */
 const httpFetch = (url, { method, handleResponseAs, headers }, body) => {
   let API_HEADER = ManageHeader(headers), API_BODY = ManageBody(body);
 
@@ -29,9 +28,8 @@ const httpFetch = (url, { method, handleResponseAs, headers }, body) => {
 };
 
 /**
- * 
- * @param {*} response 
- * Pure Function 
+ * @function StatusHandler handles the response type of the request and returns a promise 
+ * @param {Object} 
  */
 const StatusHandler = response => {
   if (response.status >= 200 && response.status < 300) {
@@ -42,9 +40,8 @@ const StatusHandler = response => {
 };
 
 /**
- * 
- * @param {*} response 
- * Pure function 
+ * @function ResponseHandler handles the response return and formatting type of the application 
+ * @param {Object} response 
  */
 const ResponseHandler = response => {
   let response_method = null;
@@ -56,9 +53,8 @@ const ResponseHandler = response => {
 };
 
 /**
- * 
- * @param {*} header 
- * Pure function 
+ * @function ManageHeader formats the header for the request 
+ * @param {Object} header 
  */
 const ManageHeader = header => {
   const defaultHeader = new Headers({
@@ -70,9 +66,8 @@ const ManageHeader = header => {
 };
 
 /**
- * 
- * @param {*} body 
- * Pure function 
+ * @function ManageBody formats the body of the request either as a formData or JSON 
+ * @param {Object} body 
  */
 const ManageBody = body => {
   const defaultBody = null;

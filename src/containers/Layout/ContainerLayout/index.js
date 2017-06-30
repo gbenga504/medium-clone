@@ -1,10 +1,9 @@
-/**
- * Pure container component 
- */
-
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component ContainerLayout renders a layout to pad and contain each screen 
+ */
 class ContainerLayout extends PureComponent {
   render() {
     return (
