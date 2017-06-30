@@ -59,7 +59,7 @@ const DisplayImage = props => {
         <img
           src={props.displayImageURI}
           alt="post display image"
-          className="displayImage"
+          className="postDisplayImage"
         />
       </div>
     </div>
@@ -69,9 +69,15 @@ const DisplayImage = props => {
 /**
  * @Functional Component ImageSelector renders the button to add the display image to the application 
  */
-const ImageSelector = () => {
+const ImageSelector = props => {
   return (
     <div className="imageSelector">
+      <input
+        type="file"
+        className="selectorInputFile"
+        onChange={props.readImage}
+        name="postImg"
+      />
       <img src="/images/add.png" />
     </div>
   );
@@ -84,13 +90,7 @@ const ImageSelector = () => {
 const TitleBox = props => {
   return (
     <div className="row titleBox">
-      <input
-        type="file"
-        className="selectorInputFile"
-        onChange={props.readImage}
-        name="postImg"
-      />
-      <ImageSelector />
+      <ImageSelector readImage={props.readImage} />
       <input
         type="text"
         value={props.titleHTML ? props.titleHTML : ""}

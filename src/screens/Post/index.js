@@ -101,9 +101,9 @@ class Post extends PureComponent {
  * handle the text change event 
  * @params {String} text
  */
-  handleTitleChange = text => {
+  handleTitleChange = evt => {
     this.setState({
-      titleHTML: text
+      titleHTML: evt.target.value
     });
   };
 
