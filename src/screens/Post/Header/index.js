@@ -25,7 +25,7 @@ class Header extends PureComponent {
                   publish
                 </div>
                 <div id="profileImage">
-                  <img src="" alt="notification" id="headerIcons" />
+                  <img src="" alt="" id="headerIcons" />
                 </div>
               </div>
             </div>

@@ -58,7 +58,7 @@ const DisplayImage = props => {
       <div className="col-xs-12 col-sm-offset-3 col-sm-6">
         <img
           src={props.displayImageURI}
-          alt="post display image"
+          alt=""
           className="postDisplayImage"
         />
       </div>

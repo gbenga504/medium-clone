@@ -16,7 +16,7 @@ class Header extends PureComponent {
     return (
       <HeaderLayout color={this.props.color}>
         <div className="col-xs-2">
-          <img src="" id="logo" alt="logo" />
+          <img src="" id="logo" alt="" />
         </div>
         <div className="col-xs-offset-4 col-xs-6">
           <div id="section-icon-header-positioner">

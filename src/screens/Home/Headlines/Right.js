@@ -16,7 +16,7 @@ class TextRight extends PureComponent {
             &nbsp;
             <img
               src="/images/forward.png"
-              alt="backButton"
+              alt=""
               style={Styles.backImage}
             />
           </div>

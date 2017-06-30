@@ -14,7 +14,7 @@ class SubHeader extends PureComponent {
               <div className="profile_image_holder">
                 <img
                   src={this.props.profile.userProfilePic}
-                  alt="user profile image"
+                  alt=""
                   width="100%"
                   height="100%"
                 />

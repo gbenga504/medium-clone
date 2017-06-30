@@ -16,7 +16,7 @@ class MaterialCard extends PureComponent {
             <div className="col-xs-12 post_image">
               <img
                 src={this.props.data.postImage}
-                alt="new post image"
+                alt=""
               />
             </div>
           </div>

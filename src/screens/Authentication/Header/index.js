@@ -10,7 +10,7 @@ class Header extends PureComponent {
     return (
       <HeaderLayout border={true} color={"fff"}>
         <div className="col-xs-offset-4 col-xs-4 text-center">
-          <img src="" alt="logo image for the web application" />
+          <img src="" alt="" />
         </div>
       </HeaderLayout>
     );

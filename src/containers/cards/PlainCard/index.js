@@ -12,7 +12,7 @@ class PlainCard extends PureComponent {
           <div className="row">
             <div className="col-xs-12">
               <div className="imageTagger">
-                <img src="" alt="tag image" />
+                <img src="" alt="" />
               </div>
             </div>
           </div>
