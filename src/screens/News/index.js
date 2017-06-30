@@ -74,7 +74,10 @@ class News extends PureComponent {
                   timePosted={this.state.mainData.updated_at}
                 />
                 <Title title={this.state.mainData.title} />
-                <Message body={this.state.mainData.body} />
+                <Message
+                  body={this.state.mainData.body}
+                  displayImageURI={this.state.mainData.postImage}
+                />
                 <AltIcon />
               </div>
             </div>

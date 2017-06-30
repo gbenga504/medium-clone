@@ -15,35 +15,42 @@ class Post extends PureComponent {
       displayImageURI: null,
       postURI: "/api/v1/post",
       bodyHTML: "",
+      titleHTML: "",
       formRef: null,
       userDetails: {}
     };
   }
 
-  componentDidMount(){
-    console.log(this.props.match.params.id);
-    httpFetch(`${this.state.postURI}/${this.props.match.params.id}`, {
-      method: "Get",
-      handleResponseAs: "json",
-    })
-    .then(response => {
-      if(response.status == 'success'){
-        
-      }
-      else Promise.reject(response.message)
-    })
-    .catch(error => {
-      console.log('An occurred while trying to get the the post information');
-    })
+  componentDidMount() {
+    if (this.props.match.params.id)
+      httpFetch(`${this.state.postURI}/${this.props.match.params.id}`, {
+        method: "Get",
+        handleResponseAs: "json"
+      })
+        .then(response => {
+          if (response.status == "success") {
+            this.setState({
+              titleHTML: response.data.title,
+              bodyHTML: response.data.body,
+              displayImageURI: response.data.postImage
+            });
+          } else Promise.reject(response.message);
+        })
+        .catch(error => {
+          console.log(
+            "An occurred while trying to get the the post information"
+          );
+        });
   }
 
   /**
-   * This function sends the form post to the server after user is done writind post
+   * This function either makes a post or updates a post based on the url 
    */
   makePost = () => {
+    let requestMethod = this.props.match.params.id ? "Put" : "Post";
     httpFetch(this.state.postURI, {
       handleResponseAs: "json",
-      method: "Post",
+      method: requestMethod,
       body: new FormData(this.state.formRef)
     })
       .then(response => {
@@ -90,6 +97,16 @@ class Post extends PureComponent {
     });
   };
 
+  /**
+ * handle the text change event 
+ * @params {String} text
+ */
+  handleTitleChange = text => {
+    this.setState({
+      titleHTML: text
+    });
+  };
+
   render() {
     return (
       <div className="row">
@@ -105,6 +122,11 @@ class Post extends PureComponent {
                   bodyHTML={this.state.bodyHTML}
                   displayImageURI={this.state.displayImageURI}
                   handleBodyChange={this.handleBodyChange}
+                  handleTitleChange={this.handleTitleChange}
+                  formInnerHTML={{
+                    titleHTML: this.state.titleHTML,
+                    bodyHTML: this.state.bodyHTML
+                  }}
                 />
               </div>
             </div>

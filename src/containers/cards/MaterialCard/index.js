@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import Link from '../../Linking';
 import "./index.css";
 
 class MaterialCard extends PureComponent {
@@ -43,11 +44,13 @@ class MaterialCard extends PureComponent {
                   alt="edit_btn"
                   className="recommend_img"
                 />
-                <img
-                  src="/images/remove.png"
-                  alt="delete_btn"
-                  className="recommend_img"
-                />
+                <Link to={`/post/${this.props.data.id}`}>
+                  <img
+                    src="/images/remove.png"
+                    alt="delete_btn"
+                    className="recommend_img"
+                  />
+                </Link>
               </div>
             </div>
           </div>

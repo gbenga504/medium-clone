@@ -14,10 +14,17 @@ class Form extends PureComponent {
     return (
       <form className="row form" ref={ref => (this.formRef = ref)}>
         <div className="col-xs-12">
-          <TitleBox readImage={this.props.onReadImage} />
+          <TitleBox
+            readImage={this.props.onReadImage}
+            handleTitleChange={this.props.handleTitleChange}
+            titleHTML={this.props.formInnerHTML.titleHTML}
+          />
           <DisplayImage displayImageURI={this.props.displayImageURI} />
-          <input type="hidden" value={this.props.bodyHTML} name="body"/>
-          <PostBox handleBodyChange={this.props.handleBodyChange} />
+          <input type="hidden" value={this.props.bodyHTML} name="body" />
+          <PostBox
+            handleBodyChange={this.props.handleBodyChange}
+            bodyHTML={this.props.formInnerHTML.bodyHTML}
+          />
           <SecuredField userDetails={this.props.userDetails} />
         </div>
       </form>
@@ -84,7 +91,14 @@ const TitleBox = props => {
         name="postImg"
       />
       <ImageSelector />
-      <input type="text" placeholder="Enter a title" id="titleInput" name="title"/>
+      <input
+        type="text"
+        value={props.titleHTML ? props.titleHTML : ""}
+        placeholder="Enter a title"
+        id="titleInput"
+        name="title"
+        onChange={props.handleTitleChange}
+      />
     </div>
   );
 };

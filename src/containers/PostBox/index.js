@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Editor from 'react-medium-editor';
+import Editor from "react-medium-editor";
 import "medium-editor/dist/css/medium-editor.css";
 import "medium-editor/dist/css/themes/default.css";
 import "./index.css";
@@ -10,10 +10,23 @@ class PostBox extends PureComponent {
       <div className="row messageBox">
         <Editor
           tag="p"
-          options={{toolbar: {buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote']}}}
+          options={{
+            toolbar: {
+              buttons: [
+                "bold",
+                "italic",
+                "underline",
+                "anchor",
+                "h2",
+                "h3",
+                "quote"
+              ]
+            }
+          }}
           className="postBox"
           data-placeholder="Write your post"
           onChange={this.props.handleBodyChange}
+          text={this.props.bodyHTML ? this.props.bodyHTML : ""}
         />
       </div>
     );

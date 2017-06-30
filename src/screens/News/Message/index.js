@@ -8,6 +8,7 @@ class Message extends PureComponent {
   render() {
     return (
       <div className="row message">
+        <DisplayImage displayImageURI={this.props.displayImageURI} />
         <div className="col-xs-12 text-justify messageBody">
           {this.props.body}
         </div>
@@ -15,5 +16,26 @@ class Message extends PureComponent {
     );
   }
 }
+
+/**
+ * @Functional component DisplayImage to display the main image of the post 
+ * @param {String} props 
+ */
+const DisplayImage = props => {
+  return (
+    <div
+      className="row"
+      style={props.displayImageURI ? { display: "block" } : { display: "none" }}
+    >
+      <div className="col-xs-12 col-sm-offset-3 col-sm-6">
+        <img
+          src={props.displayImageURI}
+          alt="post display image"
+          className="displayImage"
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Message;
