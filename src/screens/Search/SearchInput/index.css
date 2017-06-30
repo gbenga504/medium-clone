@@ -13,11 +13,12 @@
     border-bottom: 1px solid #2196f3;
     color: #000;
     padding-left: 0px;
+    outline: none;
 }
 
 @media screen and (min-width:0px) and (max-width:767px) {
     #searchInput{
-        font-size: 22px;
+        font-size: 18px;
     }
 }
 
