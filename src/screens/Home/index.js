@@ -16,12 +16,20 @@ class Home extends PureComponent {
       latestLoad: false,
       latestCount: 0,
       latestURI: "/api/v1/post",
-      latestData: []
+      latestData: [],
+      makePostLinkVisible: false
     };
   }
 
   //Fetch Latest news information from DB
   componentDidMount() {
+    let shouldMakeVisible = window.localStorage.getItem("user_details")
+      ? true
+      : false;
+    this.setState({
+      makePostLinkVisible: shouldMakeVisible
+    });
+
     httpFetch(this.state.latestURI, {
       method: "Get",
       handleResponseAs: "json"
@@ -78,7 +86,7 @@ class Home extends PureComponent {
       <ContainerLayout color="#FBFCFD">
         <div className="row">
           <div className="col-xs-12">
-            <Header color="#FBFCFD" />
+            <Header color="#FBFCFD" makePostLinkVisible={this.state.makePostLinkVisible}/>
             <Headlines title="Latest News">
               <TextRight title="More" onClick={this.loadMore} />
             </Headlines>

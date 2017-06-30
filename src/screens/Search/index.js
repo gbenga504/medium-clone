@@ -15,9 +15,19 @@ class Search extends PureComponent {
       searchURI: "/api/v1/search/post",
       searchData: [],
       startData: 0,
-      isDataLoading: false
+      isDataLoading: false,
+      makePostLinkVisible: false
     };
     this.scrollToBottom();
+  }
+
+  componentDidMount() {
+    let shouldMakeVisible = window.localStorage.getItem("user_details")
+      ? true
+      : false;
+    this.setState({
+      makePostLinkVisible: shouldMakeVisible
+    });
   }
 
   /**
@@ -57,7 +67,7 @@ class Search extends PureComponent {
           console.log("An error occurred while trying to get data");
         });
     }
-  }
+  };
 
   /**
    * Request more information when the user scolls to the bottom of the page 
@@ -72,13 +82,13 @@ class Search extends PureComponent {
         this.handleSearchRequest(ev);
       }
     };
-  }
+  };
 
   render() {
     return (
       <div className="row">
         <div className="col-xs-12">
-          <Header color="#fff" />
+          <Header color="#fff" makePostLinkVisible={this.state.makePostLinkVisible}/>
           <ContainerLayout color="#fff">
             <div className="row">
               <div className="col-xs-12">

@@ -16,13 +16,21 @@ class Admin extends PureComponent {
       profileURI: "/api/v1/user",
       adminData: {},
       posts: [],
-      deleteURI: "/api/v1/post"
+      deleteURI: "/api/v1/post",
+      makePostLinkVisible: false
     };
     this.deletePost = this.deletePost.bind(this);
   }
 
   //Fetch the admin information and some posts
   componentDidMount() {
+    let shouldMakeVisible = window.localStorage.getItem("user_details")
+      ? true
+      : false;
+    this.setState({
+      makePostLinkVisible: shouldMakeVisible
+    });
+    
     let userId = window.localStorage.getItem("user_details");
     httpFetch(`${this.state.profileURI}/${userId}`, {
       method: "Get",
@@ -75,7 +83,10 @@ class Admin extends PureComponent {
     return (
       <div className="row" style={{ height: "100%" }}>
         <div className="col-xs-12" style={{ height: "100%" }}>
-          <Header color={"#fff"} />
+          <Header
+            color={"#fff"}
+            makePostLinkVisible={this.state.makePostLinkVisible}
+          />
           <SubHeader profile={this.state.adminData} />
           <ContainerLayout color="#F4F4EF">
             <div className="row">

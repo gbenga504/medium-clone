@@ -16,7 +16,7 @@ class Form extends PureComponent {
         <div className="col-xs-12">
           <TitleBox readImage={this.props.onReadImage} />
           <DisplayImage displayImageURI={this.props.displayImageURI} />
-          <input type="hidden" value={this.props.bodyHTML} />
+          <input type="hidden" value={this.props.bodyHTML} name="body"/>
           <PostBox handleBodyChange={this.props.handleBodyChange} />
           <SecuredField userDetails={this.props.userDetails} />
         </div>
@@ -33,7 +33,7 @@ const SecuredField = props => {
   return (
     <div>
       <input type="hidden" name="userId" value={props.userDetails.userId} />
-      <input type="hidden" name="secureKey" value={props.userDetails.userId} />
+      <input type="hidden" name="secret" value={props.userDetails.secret} />
     </div>
   );
 };
@@ -81,9 +81,10 @@ const TitleBox = props => {
         type="file"
         className="selectorInputFile"
         onChange={props.readImage}
+        name="postImg"
       />
       <ImageSelector />
-      <input type="text" placeholder="Enter a title" id="titleInput" />
+      <input type="text" placeholder="Enter a title" id="titleInput" name="title"/>
     </div>
   );
 };
