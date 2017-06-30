@@ -1,7 +1,13 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component SearchInput renders the html search input 
+ */
 class SearchInput extends PureComponent {
+  /**
+   * @param {Object} ev 
+   */
   keyPress(ev) {
     let searchValue = this.inputRef.value;
     this.props.onKeyPress(ev, searchValue);

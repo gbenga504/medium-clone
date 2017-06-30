@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component SubHeader renders the subHeader of the application 
+ */
 class SubHeader extends PureComponent {
   render() {
     return (

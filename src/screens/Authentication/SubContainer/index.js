@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component SubContainer renders the login screen header 
+ */
 class SubContainer extends PureComponent {
   render() {
     return (

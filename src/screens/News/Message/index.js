@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import "./index.css";
 
+/**
+ * @Component Message renders the message body of the news screen
+ */
 class Message extends PureComponent {
   render() {
     return (

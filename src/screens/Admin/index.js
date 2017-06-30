@@ -4,8 +4,11 @@ import { ContainerLayout } from "../../containers/Layout";
 import SubHeader from "./SubHeader";
 import { MaterialCard } from "../../containers/cards";
 import Linking from "../../containers/Linking";
-import {httpFetch} from "../../containers/Request";
+import { httpFetch } from "../../containers/Request";
 
+/**
+ * @Component Admin renders the admin scren of the application 
+ */
 class Admin extends PureComponent {
   constructor(props) {
     super(props);
@@ -13,24 +16,29 @@ class Admin extends PureComponent {
       profileURI: "",
       adminData: {},
       posts: [],
-      deleteURI: "",
+      deleteURI: ""
     };
     this.deletePost = this.deletePost.bind(this);
   }
 
+  //Fetch the admin information and some posts
   componentDidMount() {
     httpFetch(`${this.state.profileURI}`, {
       method: "GET",
       handleResponseAs: "json"
     })
       .then(response => {
-        if(response.status == "error") return Promise.reject(response.message)
+        if (response.status == "error") return Promise.reject(response.message);
         else {
           let admin_data = response.data;
           this.setState({
-            adminData : {userProfilePic: admin_data.userProfilePic, firstName: admin_data.firstName, lastName: admin_data.lastName},
-            posts: admin_data.Posts,
-          })
+            adminData: {
+              userProfilePic: admin_data.userProfilePic,
+              firstName: admin_data.firstName,
+              lastName: admin_data.lastName
+            },
+            posts: admin_data.Posts
+          });
         }
       })
       .catch(error => {
@@ -40,13 +48,16 @@ class Admin extends PureComponent {
       });
   }
 
+  /**
+ * Delete ost based on Id 
+ * @param {String} postId 
+ */
   deletePost(postId) {
     httpFetch(`${this.state.deleteURI}/${postId}`, {
       method: "Post",
-      handleResponseAs: "json",
+      handleResponseAs: "json"
     }).then(response => {
       if (response.status == "success") {
-        //reset state to match new data
         let updatedPost = this.state.post.filter(item => {
           return item.postId != postId;
         });

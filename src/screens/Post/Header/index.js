@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import { HeaderLayout } from "../../../containers/Layout";
 import "./index.css";
 
+/**
+ * @Component Header presentational container displays the header of the post screen
+ */
 class Header extends PureComponent {
   render() {
     return (
@@ -18,7 +21,9 @@ class Header extends PureComponent {
                 share
               </div>
               <div id="iconHolder" className="col-xs-9">
-                <div id="publishBtn" onClick={this.props.onMakePost}>publish</div>
+                <div id="publishBtn" onClick={this.props.onMakePost}>
+                  publish
+                </div>
                 <div id="profileImage">
                   <img src="" alt="notification" id="headerIcons" />
                 </div>

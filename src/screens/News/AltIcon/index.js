@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./index.css";
 
+/**
+ * @Component AltIcon renders the share Icons (facebook, twitter) of the application and share counts 
+ */
 class AltIcon extends Component {
   render() {
     return (

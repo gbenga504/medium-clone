@@ -4,7 +4,7 @@ import Linking from "../../../containers/Linking";
 import { CircularLoader } from "../../../containers/Loaders";
 
 /**
- * Section returns a presentational container for the actual post 
+ *@Component Section renders a presentational container to hold post cards 
  */
 class Section extends PureComponent {
   render() {

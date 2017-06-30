@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import { HeaderLayout } from "../../../containers/Layout";
 import "./index.css";
 
+/**
+ * @Component Header renders the header of the login screen  
+ */
 class Header extends PureComponent {
   render() {
     return (

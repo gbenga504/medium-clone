@@ -2,20 +2,26 @@ import React, { PureComponent } from "react";
 import { ContainerLayout } from "../../containers/Layout";
 import Header from "./Header";
 import AuthenticationForm from "./AuthenticationForm";
-import {httpFetch} from '../../containers/Request';
-import {withRouter} from 'react-router-dom';
+import { httpFetch } from "../../containers/Request";
 
+/**
+ * @Component Authentication renders login screen of the screen 
+ */
 class Authentication extends PureComponent {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      loginURI : '',
-      data : {},
-    }
+      loginURI: "",
+      data: {}
+    };
     this.login = this.login.bind(this);
   }
 
-  login({email, password}){
+  /**
+ * log user into aplication after supplying informATION 
+ * @param {Object} param ({email|String, password|String}) 
+ */
+  login({ email, password }) {
     httpFetch(this.state.loginURI, {
       handleResponseAs: "json",
       method: "post",
@@ -23,15 +29,19 @@ class Authentication extends PureComponent {
         email,
         password
       })
-    }).then (response => {
-        if(response.status == "success"){
-          window.localStorage.setItem('user_details', JSON.stringify(response.data));
-          this.props.history.push('/loggedIn');
-        }
-        else return Promise.reject(response.message);
-    }).catch(error => {
-        console.log("An error occurred while trying to rerieve data");
     })
+      .then(response => {
+        if (response.status == "success") {
+          window.localStorage.setItem(
+            "user_details",
+            JSON.stringify(response.data)
+          );
+          this.props.history.push("/loggedIn");
+        } else return Promise.reject(response.message);
+      })
+      .catch(error => {
+        console.log("An error occurred while trying to rerieve data");
+      });
   }
 
   render() {
@@ -42,7 +52,7 @@ class Authentication extends PureComponent {
           <ContainerLayout color="#FBFCFD">
             <div className="row">
               <div className="col-xs-12">
-                <AuthenticationForm login={this.login}/>
+                <AuthenticationForm login={this.login} />
               </div>
             </div>
           </ContainerLayout>
@@ -52,4 +62,4 @@ class Authentication extends PureComponent {
   }
 }
 
-export default withRouter(Authentication);
+export default Authentication;

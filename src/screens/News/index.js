@@ -7,6 +7,9 @@ import AltIcon from "./AltIcon";
 import PostFooter from "./PostFooter";
 import { httpFetch } from "../../containers/Request";
 
+/**
+ * @Component News renders the news screen and displays post based on Ids 
+ */
 class News extends PureComponent {
   constructor(props) {
     super(props);
@@ -18,33 +21,33 @@ class News extends PureComponent {
     };
   }
 
+  //Fetch the data related to the post based on Id and also other news that the user can read
   componentDidMount() {
     httpFetch(this.state.dataURI, {
       method: "Get",
       handleResponseAs: "json"
-    }).then(response => {
-      if(response.status == 'success')
-        this.setState({
-          mainData: response.data
-        });
-      else 
-        Promise.reject(response.message);
-    }).catch(error => {
-      console.log('An error occurred while tryign to retrieve data');
     })
-
+      .then(response => {
+        if (response.status == "success")
+          this.setState({
+            mainData: response.data
+          });
+        else Promise.reject(response.message);
+      })
+      .catch(error => {
+        console.log("An error occurred while tryign to retrieve data");
+      });
 
     httpFetch(`${this.state.moreNewsURI}?len=2`, {
       method: "Get",
       handleResponseAs: "json"
     })
       .then(response => {
-        if(response.status == 'success')
+        if (response.status == "success")
           this.setState({
             moreNewsData: response.data
           });
-        else 
-          Promise.reject(response.message);
+        else Promise.reject(response.message);
       })
       .catch(error => {
         console.log("An error occurred while trying to get information");

@@ -2,12 +2,16 @@ import React, { PureComponent } from "react";
 import "./index.css";
 import moment from "moment";
 
+/**
+ * @Component Info renders the display information of the writer 
+ */
 class Info extends PureComponent {
   constructor(props) {
     super(props);
     this.manageTimePosted = this.manageTimePosted.bind(this);
   }
 
+  //Call moment to perform a formatting for the time
   manageTimePosted() {
     return moment(this.props.timePosted).format("Do MMMM YYYY");
   }

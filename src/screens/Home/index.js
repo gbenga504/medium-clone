@@ -6,11 +6,10 @@ import Section from "./Section";
 import { StaticFooter } from "../../containers/Footer";
 import { httpFetch } from "../../containers/Request";
 
+/**
+ * @Component Home renders the home of the blog 
+ */
 class Home extends PureComponent {
-  /**
-   * 
-   * @param {*} props 
-   */
   constructor(props) {
     super(props);
     this.state = {
@@ -19,12 +18,9 @@ class Home extends PureComponent {
       latestURI: "/badoo2.json",
       latestData: []
     };
-    this.loadMore = this.loadMore.bind(this);
   }
 
-  /**
-   * Fetch Latest news information from DB 
-   */
+  //Fetch Latest news information from DB
   componentDidMount() {
     httpFetch(this.state.latestURI, {
       method: "Get",
@@ -49,7 +45,7 @@ class Home extends PureComponent {
    * @param {*} topic 
    * 
    */
-  loadMore(topic) {
+  loadMore = topic => {
     let URI = null;
 
     httpFetch(`${this.state.latestURI}?start=${this.state.latestCount}`, {
@@ -75,7 +71,7 @@ class Home extends PureComponent {
     this.setState({
       latestLoad: true
     });
-  }
+  };
 
   render() {
     return (

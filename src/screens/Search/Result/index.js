@@ -3,6 +3,9 @@ import { PlainCard } from "../../../containers/cards";
 import Linking from "../../../containers/Linking";
 import { CircularLoader } from "../../../containers/Loaders";
 
+/**
+ * @Component Result renders container around the result displayed after the search 
+ */
 class Result extends PureComponent {
   constructor(props) {
     super(props);

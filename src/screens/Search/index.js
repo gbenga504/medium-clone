@@ -5,6 +5,9 @@ import SearchInput from "./SearchInput";
 import Result from "./Result";
 import { httpFetch } from "../../containers/Request";
 
+/**
+ * @Component Search is a serach based container component 
+ */
 class Search extends PureComponent {
   constructor(props) {
     super(props);
@@ -14,11 +17,15 @@ class Search extends PureComponent {
       startData: 0,
       isDataLoading: false
     };
-    this.handleSearchRequest = this.handleSearchRequest.bind(this);
     this.scrollToBottom();
   }
 
-  handleSearchRequest(ev, searchValue) {
+  /**
+   * 
+   * @param {Object} ev (contains the event representing the object of the preformed action)
+   * @param {String} searchValue (This a string containing the search value)
+   */
+  handleSearchRequest = (ev, searchValue) => {
     if (
       (ev.which === 13 && /keypress/i.test(ev.type)) ||
       /scroll/i.test(ev.type)
@@ -34,16 +41,15 @@ class Search extends PureComponent {
         }
       )
         .then(response => {
-          if(response.status == 'success')
+          if (response.status == "success")
             this.setState((prevState, prevProps) => {
               return {
                 searchData: response.data,
                 isDataLoading: false,
-                startData: prevState.startData + response.data.length,
+                startData: prevState.startData + response.data.length
               };
             });
           else {
-            
           }
         })
         .catch(error => {
@@ -53,7 +59,10 @@ class Search extends PureComponent {
     }
   }
 
-  scrollToBottom() {
+  /**
+   * Request more information when the user scolls to the bottom of the page 
+   */
+  scrollToBottom = () => {
     window.onscroll = ev => {
       const GLOBAL_CONTAINER = document.getElementsByTagName("div")[0];
       if (
