@@ -11,3 +11,50 @@
 .tagMainHeader{
     margin-top: 30px;
 }
+
+.loginBtn{
+    height: 44px;
+    border-radius: 5px;
+    background: #2196f3;
+    border: 0px solid transparent;
+    color: white;
+    outline: none;
+}
+
+.inputEl{
+    border: 1px solid #2196f3;
+    font-size: 13px;
+    box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+    border-radius: 2px;
+    color: #2e3d49;
+    border-radius: 5px; 
+    color: #666;
+    outline: none;
+}
+
+.formElContainer{
+    margin-top: 20px;
+    font-family: Raleway;
+    height: 44px;
+    box-sizing: border-box;
+}
+
+::-webkit-input-placeholder{
+    font-family: MidRaleway;
+    color: #000;
+}
+
+::-moz-placeholder{
+    font-family: MidRaleway;
+    color: #000;
+}
+
+::-ms-input-placeholder{
+    font-family: MidRaleway;
+    color: #000;
+}
+
+:-moz-placeholder{
+    font-family: MidRaleway;
+    color: #000;
+}

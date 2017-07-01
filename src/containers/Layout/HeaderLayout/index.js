@@ -1,21 +1,22 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import "./index.css";
 
-class HeaderLayout extends PureComponent {
-  render() {
-    return (
-      <div
-        className="row"
-        id="header"
-        style={{
-          borderBottom: this.props.border ? "1px solid #E5E5E5" : "",
-          backgroundColor: this.props.color ? this.props.color : "#E5E5E5"
-        }}
-      >
-        {this.props.children}
-      </div>
-    );
-  }
-}
+/**
+ * @Component HeaderLayout renders a container layout to pad the header components 
+ */
+const HeaderLayout = (props) => {
+  return (
+    <div
+      className="row"
+      id="header"
+      style={{
+        borderBottom: props.border ? "1px solid #E5E5E5" : "",
+        backgroundColor: props.color ? props.color : "#E5E5E5"
+      }}
+    >
+      {props.children}
+    </div>
+  );
+};
 
 export default HeaderLayout;

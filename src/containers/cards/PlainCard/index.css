@@ -6,6 +6,7 @@
     font-family: Raleway;
     font-size: 16px;
     text-align: justify;
+    color: #333
 }
 
 .imageTagger{
@@ -20,6 +21,7 @@
     font-family: MidRaleway;
     font-size: 14px;
     text-align: justify;
+    color: #666;
 }
 
 .recommend_btn{
@@ -36,6 +38,7 @@
 .recommended_tag{
     font-family: Raleway;
     font-size: 14px;
+    color: #666;
 }
 
 @media screen and (min-width:0px) and (max-width:767px) {

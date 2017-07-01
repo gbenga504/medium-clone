@@ -1,22 +1,42 @@
-import React, {PureComponent} from 'react';
-import './index.css';
+import React, { PureComponent } from "react";
+import "./index.css";
+import moment from "moment";
 
-class Info extends PureComponent{
-    render(){
-        return (
-            <div className="row info">
-                <div className="col-xs-12">
-                    <div id="imageIcon">
-                        <img src="" alt="commenter's image" />
-                    </div>
-                    <div id="commenter_info">
-                        <div className="writer_name">Anifowoshe Gbenga David</div>
-                        <div className="time"> June 26th 2017. </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+/**
+ * @Component Info renders the display information of the writer 
+ */
+class Info extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.manageTimePosted = this.manageTimePosted.bind(this);
+  }
+
+  //Call moment to perform a formatting for the time
+  manageTimePosted() {
+    return moment(this.props.timePosted).format("Do MMMM YYYY");
+  }
+
+  render() {
+    return (
+      <div className="row info">
+        <div className="col-xs-12">
+          <div id="imageIcon">
+            <img
+              src={this.props.writersImage}
+              alt="commenter's image"
+              width="100%"
+              height="100%"
+              id="writersImage"
+            />
+          </div>
+          <div id="commenter_info">
+            <div className="writer_name">{this.props.writerName}</div>
+            <div className="time"> {this.manageTimePosted()} </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Info;

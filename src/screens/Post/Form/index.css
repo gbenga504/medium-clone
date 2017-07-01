@@ -18,7 +18,34 @@
     color: #000;
     font-weight: bold;
     padding-left: 10px;
+    outline: none;
 }
+
+.imageSelector{
+    position: absolute;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    top: 18px;
+    text-align: center;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.imageSelector img{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.postDisplayImage{
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+}
+
 
 @media screen and (min-width:0px) and (max-width:767px) {
     #titleInput{
@@ -30,6 +57,28 @@
     .form {
         margin-top: 40px;
     }
+    .imageSelector{
+        top: 8px;
+        width: 30px;
+        height: 30px;
+    }
+    .imageSelector img{
+        margin-top: 5px;
+    }
+    .postDisplayImage{
+        height: 400px;
+    }
+}
+
+.selectorInputFile{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    z-index: 1000;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 ::-webkit-input-placeholder{

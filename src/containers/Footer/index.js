@@ -1,4 +1,4 @@
-import StaticFooter from './StaticFooter';
-import NavigationalFooter from './NavigationalFooter';
+import StaticFooter from "./StaticFooter";
+import NavigationalFooter from "./NavigationalFooter";
 
-export {NavigationalFooter,StaticFooter};
+export { NavigationalFooter, StaticFooter };

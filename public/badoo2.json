@@ -1,0 +1,53 @@
+[
+	{
+		"id" : "67",
+		"postId" : "dhffnb",
+		"postImage": "/images/profile.jpg",
+		"user_userId": "1",
+		"title": "Beginning with colanut",
+		"body": "beginning colanut in 2017",
+		"updated_at": "2017-06-22T16:26:22.762Z",
+		"User":{
+			"id" : "178",
+			"userId": "56",
+			"userFacebookId": "78",
+			"userProfilePic" : "/images/user.jpg",
+			"firstName": "Gbenga",
+			"lastName" : "David"
+		}
+	},
+	{
+		"id" : "56",
+		"postId" : "fblds",
+		"postImage": "/images/profile.jpg",
+		"user_userId": "2",
+		"title": "neyo",
+		"body": "Python is like the best language right now, dont you think",
+		"updated_at": "2017-06-23T16:26:22.762Z",
+		"User":{
+			"id" : "100",
+			"userId": "100",
+			"userFacebookId": "100",
+			"userProfilePic" : "/images/user.jpg",
+			"firstName": "Toyinjee",
+			"lastName" : "Anifowosheyui"
+		}
+	},
+	{
+		"id" : "3",
+		"postId" : "kola",
+		"postImage": "/images/profile.jpg",
+		"user_userId": "2",
+		"title": "Beginning with python",
+		"body": "Python is like the best language right now, dont you think",
+		"updated_at": "2017-06-23T16:26:22.762Z",
+		"User":{
+			"id" : "3",
+			"userId": "3",
+			"userFacebookId": "3",
+			"userProfilePic" : "/images/user.jpg",
+			"firstName": "Toyin",
+			"lastName" : "Anifowoshe"
+		}
+	}
+]

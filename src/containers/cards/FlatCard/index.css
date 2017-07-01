@@ -7,6 +7,7 @@
 #newsDisplayHolder{
     background: #f0f0f0;
     height: 248px;
+    padding: 0px;
 }
 
 #content{
