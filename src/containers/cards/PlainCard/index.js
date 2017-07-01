@@ -1,46 +1,41 @@
-import React, { PureComponent } from "react";
 import "./index.css";
+import React from "react";
 
 /**
  * @Component PlainCard renders a plain card type 
  */
-class PlainCard extends PureComponent {
-  render() {
-    return (
-      <div className="row">
-        <div className="col-xs-12 plainCard">
-          <div className="row">
-            <div className="col-xs-12 cardTitle">{this.props.data.title}</div>
-          </div>
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="imageTagger">
-                <img src="" alt="" />
-              </div>
+
+export const PlainCard = () => {
+  return (
+    <div className="row">
+      <div className="col-xs-12 plainCard">
+        <div className="row">
+          <div className="col-xs-12 cardTitle">{this.props.data.title}</div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12">
+            <div className="imageTagger">
+              <img src="" alt="" />
             </div>
           </div>
-          <div className="row">
-            <div className="col-xs-12 cardBody">{this.props.data.body}</div>
-          </div>
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="recommend_btn">
-                <span className="recommended_tag">23 recommended</span>
-                {" "}
-                &nbsp; &nbsp;
-                {" "}
-                <img
-                  src="/images/recommend.png"
-                  alt="recommend"
-                  className="recommend_img"
-                />
-              </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12 cardBody">{this.props.data.body}</div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12">
+            <div className="recommend_btn">
+              <span className="recommended_tag">23 recommended</span>
+              &nbsp; &nbsp;
+              <img
+                src="/images/recommend.png"
+                alt="recommend"
+                className="recommend_img"
+              />
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-}
-
-export default PlainCard;
+    </div>
+  );
+};

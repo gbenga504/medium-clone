@@ -80,12 +80,12 @@ class Admin extends PureComponent {
         this.setState({
           post: updatedPost,
           toolTipMessage: "Post Deleted successfully",
-          toolTipType: "success",
+          toolTipType: "success"
         });
       } else {
         this.setState({
           toolTipMessage: "Error occurred in deleting post",
-          toolTipType: "error",
+          toolTipType: "error"
         });
       }
     });
