@@ -1,15 +1,14 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import "./index.css";
 import moment from "moment";
 
 /**
  * @Component Bottom renders the bottom segment of the card which contains user info 
  */
-class Bottom extends PureComponent {
-  render() {
+const Bottom = () => {
     return (
       <div className="bottom">
-        <ImageIcon userProfilePics={this.props.userProfilePics} />
+        <ImageIcon userProfilePics={this.props.userProfilePic} />
         <CoreInfo
           writer={this.props.writer}
           timePosted={this.props.timePosted}
@@ -17,7 +16,6 @@ class Bottom extends PureComponent {
         <BottomIcon />
       </div>
     );
-  }
 }
 
 /**
@@ -28,7 +26,7 @@ const ImageIcon = props => {
   return (
     <div className="imageIcon">
       <img
-        src={`${props.userProfilePics}`}
+        src={`${props.userProfilePic}`}
         width="100%"
         height="100%"
         className="writer_display_image"
