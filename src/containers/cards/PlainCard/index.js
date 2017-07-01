@@ -5,7 +5,7 @@ import React from "react";
  * @Component PlainCard renders a plain card type 
  */
 
-export const PlainCard = () => {
+const PlainCard = () => {
   return (
     <div className="row">
       <div className="col-xs-12 plainCard">
@@ -39,3 +39,5 @@ export const PlainCard = () => {
     </div>
   );
 };
+
+export default PlainCard;

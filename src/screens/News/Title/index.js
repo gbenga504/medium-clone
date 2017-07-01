@@ -4,11 +4,11 @@ import "./index.css";
 /**
  * @Component Title renders the title of the news screen 
  */
-const Title = () => {
+const Title = (props) => {
   return (
     <div className="row title">
       <div className="col-xs-12 text-center">
-        <span className="postTitle">{this.props.title}</span>
+        <span className="postTitle">{props.title}</span>
       </div>
     </div>
   );

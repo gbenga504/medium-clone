@@ -4,15 +4,17 @@ import "./index.css";
 /**
  * @Component ContainerLayout renders a layout to pad and contain each screen 
  */
-export const ContainerLayout = () => {
+const ContainerLayout = (props) => {
   return (
     <div
       className="row appContainer"
-      style={{ backgroundColor: this.props.color }}
+      style={{ backgroundColor: props.color }}
     >
       <div className="col-xs-12">
-        {this.props.children}
+        {props.children}
       </div>
     </div>
   );
 };
+
+export default ContainerLayout;

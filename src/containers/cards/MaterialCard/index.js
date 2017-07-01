@@ -5,7 +5,7 @@ import "./index.css";
 /**
  * Component MaterialCard renders a material card type 
  */
-export const MaterialCard = () => {
+const MaterialCard = () => {
   return (
     <div className="row materialCard">
       <div className="col-xs-12">
@@ -57,3 +57,5 @@ export const MaterialCard = () => {
     </div>
   );
 };
+
+export default MaterialCard;

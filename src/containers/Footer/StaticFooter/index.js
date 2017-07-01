@@ -4,7 +4,7 @@ import "./index.css";
 /**
  * @Component StaticFooter renders a static footer type 
  */
-export const StaticFooter = () => {
+const StaticFooter = () => {
   return (
     <div className="row staticFooter">
       <span className="tag">Help</span>
@@ -13,3 +13,5 @@ export const StaticFooter = () => {
     </div>
   );
 };
+
+export default StaticFooter;

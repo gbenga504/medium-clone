@@ -5,7 +5,7 @@ import "./index.css";
 /**
  * @Component Header presentational container displays the header of the post screen
  */
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderLayout border={true} color="#fff">
       <div className="col-xs-12">
@@ -20,7 +20,7 @@ const Header = () => {
               share
             </div>
             <div id="iconHolder" className="col-xs-9">
-              <div id="publishBtn" onClick={this.props.onMakePost}>
+              <div id="publishBtn" onClick={props.onMakePost}>
                 publish
               </div>
               <div id="profileImage">

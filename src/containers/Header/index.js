@@ -6,9 +6,9 @@ import Linking from "../Linking";
 /**
  * @Component Header renders the header aspect of some part of the blog 
  */
-const Header = () => {
+const Header = (props) => {
   return (
-    <HeaderLayout color={this.props.color}>
+    <HeaderLayout color={props.color}>
       <div className="col-xs-2">
         <img src="" id="logo" alt="" />
       </div>
@@ -18,7 +18,7 @@ const Header = () => {
             <Linking
               to="/post"
               style={
-                this.props.makePostLinkVisible
+                props.makePostLinkVisible
                   ? { color: "#2196f3", display: "block" }
                   : { display: "none" }
               }

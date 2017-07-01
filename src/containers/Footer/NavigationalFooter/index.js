@@ -4,7 +4,7 @@ import "./index.css";
 /**
  * @Component NavigationalFooter renders a navigational footer type 
  */
-export const NavigationalFooter = () => {
+const NavigationalFooter = () => {
   return (
     <div className="row navFooter">
       <div className="col-xs-12 col-sm-offset-4 col-sm-4">
@@ -35,3 +35,5 @@ export const NavigationalFooter = () => {
     </div>
   );
 };
+
+export default NavigationalFooter;

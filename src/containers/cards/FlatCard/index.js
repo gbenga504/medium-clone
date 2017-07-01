@@ -5,7 +5,7 @@ import "./index.css";
 /**
  * @Component Flatcard renders a flat card type  
  */
-export const FlatCard = () => {
+const FlatCard = () => {
   return (
     <div className="col-sm-6 col-xs-12" style={{ marginBottom: "20px" }}>
       <div className="col-xs-12">
@@ -31,3 +31,5 @@ export const FlatCard = () => {
     </div>
   );
 };
+
+export default FlatCard;

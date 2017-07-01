@@ -7,7 +7,7 @@ import "./index.css";
 /**
  * @Component PostBox renders the post box of the application 
  */
-const PostBox = () => {
+const PostBox = (props) => {
   return (
     <div className="row messageBox">
       <Editor
@@ -27,8 +27,8 @@ const PostBox = () => {
         }}
         className="postBox"
         data-placeholder="Write your post"
-        onChange={this.props.handleBodyChange}
-        text={this.props.bodyHTML ? this.props.bodyHTML : ""}
+        onChange={props.handleBodyChange}
+        text={props.bodyHTML ? props.bodyHTML : ""}
       />
     </div>
   );
