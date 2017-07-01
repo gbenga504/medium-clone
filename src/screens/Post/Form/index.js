@@ -39,8 +39,8 @@ class Form extends PureComponent {
 const SecuredField = props => {
   return (
     <div>
-      <input type="hidden" name="userId" value={props.userDetails} />
-      <input type="hidden" name="secret" value={props.userDetails.secret} />
+      <input type="hidden" name="userId" value={props.userDetails ? props.userDetails.userId : ""} />
+      <input type="hidden" name="secret" value={props.userDetails ? props.userDetails.secret : ""} />
     </div>
   );
 };
