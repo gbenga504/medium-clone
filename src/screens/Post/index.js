@@ -4,6 +4,7 @@ import { NavigationalFooter } from "../../containers/Footer";
 import Header from "./Header";
 import Form from "./Form";
 import { httpFetch } from "../../containers/Request";
+import { ToolTip } from "../../containers/Report";
 
 /**
  * @Component Post is renders the Post screen of the blog 
@@ -17,10 +18,13 @@ class Post extends PureComponent {
       bodyHTML: "",
       titleHTML: "",
       formRef: null,
-      userDetails: {}
+      userDetails: {},
+      toolTipMessage: null,
+      toolTipType: null
     };
   }
 
+  //sends a request to get the post information from te database if its an update requets
   componentDidMount() {
     if (this.props.match.params.id)
       httpFetch(`${this.state.postURI}/${this.props.match.params.id}`, {
@@ -32,14 +36,17 @@ class Post extends PureComponent {
             this.setState({
               titleHTML: response.data.title,
               bodyHTML: response.data.body,
-              displayImageURI: response.data.postImage
+              displayImageURI: response.data.postImage,
+              toolTipMessage: "could not retrieve information",
+              toolTipType: "error"
             });
           } else Promise.reject(response.message);
         })
         .catch(error => {
-          console.log(
-            "An occurred while trying to get the the post information"
-          );
+          this.setState({
+            toolTipMessage: "could not retrieve information",
+            toolTipType: "error"
+          });
         });
   }
 
@@ -47,6 +54,10 @@ class Post extends PureComponent {
    * This function either makes a post or updates a post based on the url 
    */
   makePost = () => {
+    this.setState({
+      toolTipMessage: "sending post...",
+      toolTipType: "loading"
+    });
     let requestMethod = this.props.match.params.id ? "Put" : "Post";
     httpFetch(this.state.postURI, {
       handleResponseAs: "json",
@@ -54,11 +65,18 @@ class Post extends PureComponent {
       body: new FormData(this.state.formRef)
     })
       .then(response => {
-        if (response.status == "message") console.log("success");
+        if (response.status == "message")
+          this.setState({
+            toolTipMessage: "message posted successfully",
+            toolTipType: "success"
+          });
         else Promise.reject(response.message);
       })
       .catch(error => {
-        console.log("An error occurred while trying to make post");
+        this.setState({
+          toolTipMessage: "Error making posts",
+          toolTipType: "error"
+        });
       });
 
     let userDetails = window.localStorage.getItem("user_details"),
@@ -110,6 +128,10 @@ class Post extends PureComponent {
   render() {
     return (
       <div className="row">
+        <ToolTip
+          message={this.state.toolTipMessage}
+          type={this.state.toolTipType}
+        />
         <div className="col-xs-12">
           <Header onMakePost={this.makePost} />
           <ContainerLayout color="#fff">

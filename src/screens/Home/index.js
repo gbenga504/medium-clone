@@ -86,7 +86,10 @@ class Home extends PureComponent {
       <ContainerLayout color="#FBFCFD">
         <div className="row">
           <div className="col-xs-12">
-            <Header color="#FBFCFD" makePostLinkVisible={this.state.makePostLinkVisible}/>
+            <Header
+              color="#FBFCFD"
+              makePostLinkVisible={this.state.makePostLinkVisible}
+            />
             <Headlines title="Latest News">
               <TextRight title="More" onClick={this.loadMore} />
             </Headlines>

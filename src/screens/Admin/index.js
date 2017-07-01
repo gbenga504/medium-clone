@@ -5,6 +5,7 @@ import SubHeader from "./SubHeader";
 import { MaterialCard } from "../../containers/cards";
 import Linking from "../../containers/Linking";
 import { httpFetch } from "../../containers/Request";
+import { ToolTip } from "../../containers/Report";
 
 /**
  * @Component Admin renders the admin scren of the application 
@@ -17,7 +18,9 @@ class Admin extends PureComponent {
       adminData: {},
       posts: [],
       deleteURI: "/api/v1/post",
-      makePostLinkVisible: false
+      makePostLinkVisible: false,
+      toolTipMessage: null,
+      toolTipType: null
     };
     this.deletePost = this.deletePost.bind(this);
   }
@@ -62,6 +65,10 @@ class Admin extends PureComponent {
  * @param {String} postId 
  */
   deletePost(postId) {
+    this.setState({
+      toolTipMessage: "Deleting post...",
+      toolTipType: "loading"
+    });
     httpFetch(`${this.state.deleteURI}/${postId}`, {
       method: "delete",
       handleResponseAs: "json"
@@ -71,10 +78,15 @@ class Admin extends PureComponent {
           return item.postId != postId;
         });
         this.setState({
-          post: updatedPost
+          post: updatedPost,
+          toolTipMessage: "Post Deleted successfully",
+          toolTipType: "success",
         });
       } else {
-        console.warn("data was not deleted");
+        this.setState({
+          toolTipMessage: "Error occurred in deleting post",
+          toolTipType: "error",
+        });
       }
     });
   }
@@ -82,6 +94,10 @@ class Admin extends PureComponent {
   render() {
     return (
       <div className="row" style={{ height: "100%" }}>
+        <ToolTip
+          message={this.state.toolTipMessage}
+          type={this.state.toolTipType}
+        />
         <div className="col-xs-12" style={{ height: "100%" }}>
           <Header
             color={"#fff"}
