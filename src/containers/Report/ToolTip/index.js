@@ -6,9 +6,11 @@ import "./index.css";
  */
 class ToolTip extends PureComponent {
   shouldToolTipHide = () => {
-    window.setTimeout(() => {
-      this.toolTip.style.top = "20px";
-    });
+    if (this.props.type != null)
+      window.setTimeout(() => {
+        this.toolTip.style.top = "20px";
+      });
+
     if (this.props.type !== "loading")
       window.setTimeout(() => {
         this.toolTip.style.top = "-60px";
