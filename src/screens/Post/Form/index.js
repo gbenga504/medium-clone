@@ -39,8 +39,16 @@ class Form extends PureComponent {
 const SecuredField = props => {
   return (
     <div>
-      <input type="hidden" name="userId" value={props.userDetails ? props.userDetails.userId : ""} />
-      <input type="hidden" name="secret" value={props.userDetails ? props.userDetails.secret : ""} />
+      <input
+        type="hidden"
+        name="userId"
+        value={props.userDetails ? props.userDetails.userId : ""}
+      />
+      <input
+        type="hidden"
+        name="secret"
+        value={props.userDetails ? props.userDetails.secret : ""}
+      />
     </div>
   );
 };
@@ -56,11 +64,7 @@ const DisplayImage = props => {
       style={props.displayImageURI ? { display: "block" } : { display: "none" }}
     >
       <div className="col-xs-12 col-sm-offset-3 col-sm-6">
-        <img
-          src={props.displayImageURI}
-          alt=""
-          className="postDisplayImage"
-        />
+        <img src={props.displayImageURI} alt="" className="postDisplayImage" />
       </div>
     </div>
   );
