@@ -5,7 +5,7 @@ import "./index.css";
 /**
  * Component MaterialCard renders a material card type 
  */
-const MaterialCard = (props) => {
+const MaterialCard = props => {
   return (
     <div className="row materialCard">
       <div className="col-xs-12">
@@ -35,21 +35,22 @@ const MaterialCard = (props) => {
               />
             </div>
             <div className="admin_core_btn">
-              <img
-                src="/images/edit.png"
-                onClick={() => {
-                  this.props.deletePost(`${props.data.id}`);
-                }}
-                alt="edit_btn"
-                className="recommend_img"
-              />
               <Link to={`/post/${props.data.id}`}>
                 <img
-                  src="/images/remove.png"
-                  alt="delete_btn"
+                  src="/images/edit.png"
+                  alt="edit_btn"
                   className="recommend_img"
                 />
               </Link>
+              <img
+                src="/images/remove.png"
+                alt="delete_btn"
+                style={{marginLeft: 20}}
+                className="recommend_img"
+                onClick={() => {
+                  props.deletePost(`${props.data.id}`);
+                }}
+              />
             </div>
           </div>
         </div>

@@ -113,7 +113,7 @@ class Admin extends PureComponent {
                 {this.state.posts.map(data => {
                   return (
                     <Linking to={`/news/${data.id}`} key={`${data.id}`}>
-                      <MaterialCard data={data} deletePost={this.deletePost} />
+                      <MaterialCard data={data} deletePost={this.deletePost}/>
                     </Linking>
                   );
                 })}
