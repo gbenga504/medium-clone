@@ -5,23 +5,23 @@ import "./index.css";
 /**
  * Component MaterialCard renders a material card type 
  */
-const MaterialCard = () => {
+const MaterialCard = (props) => {
   return (
     <div className="row materialCard">
       <div className="col-xs-12">
         <div className="row">
           <div className="col-xs-12 adminPostTitle">
-            {this.props.data.title}
+            {props.data.title}
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12 post_image">
-            <img src={this.props.data.postImage} alt="" />
+            <img src={props.data.postImage} alt="" />
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12 post_message_holder">
-            <span className="post_message">{this.props.data.body}</span>
+            <span className="post_message">{props.data.body}</span>
           </div>
         </div>
         <div className="row" style={{ height: "30px" }}>
@@ -38,12 +38,12 @@ const MaterialCard = () => {
               <img
                 src="/images/edit.png"
                 onClick={() => {
-                  this.props.deletePost(`${this.props.data.id}`);
+                  this.props.deletePost(`${props.data.id}`);
                 }}
                 alt="edit_btn"
                 className="recommend_img"
               />
-              <Link to={`/post/${this.props.data.id}`}>
+              <Link to={`/post/${props.data.id}`}>
                 <img
                   src="/images/remove.png"
                   alt="delete_btn"

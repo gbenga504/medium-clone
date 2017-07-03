@@ -7,16 +7,12 @@ let HANDLE_RESPONSE_AS = null;
  * @param {Object} param1 ({method:String | handleResponseAS: String | headers: Object})
  * @param {String} body 
  */
-export const httpFetch = (url, { method, handleResponseAs, headers }, body) => {
+export const httpFetch = (url, { method, handleResponseAs, body }, headers) => {
   let API_HEADER = ManageHeader(headers), API_BODY = ManageBody(body);
 
   HANDLE_RESPONSE_AS = handleResponseAs;
 
-  return fetch(url, {
-    method,
-    headers: API_HEADER,
-    body: API_BODY
-  })
+  return RequestHeader(url, method, API_HEADER, API_BODY)
     .then(StatusHandler)
     .then(ResponseHandler)
     .then(data => {
@@ -24,6 +20,20 @@ export const httpFetch = (url, { method, handleResponseAs, headers }, body) => {
     })
     .catch(error => {
       return Promise.reject(error);
+    });
+};
+
+const RequestHeader = (url, method, header, body) => {
+  if (!(body instanceof FormData))
+    return fetch(url, {
+      method,
+      headers: header,
+      body: body
+    });
+  else
+    return fetch(url, {
+      method,
+      body: body
     });
 };
 
@@ -73,5 +83,6 @@ const ManageBody = body => {
   const defaultBody = null;
 
   let returnedBody = body ? body : null;
+
   return returnedBody;
 };

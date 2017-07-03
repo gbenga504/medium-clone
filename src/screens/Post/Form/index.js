@@ -12,7 +12,11 @@ class Form extends PureComponent {
 
   render() {
     return (
-      <form className="row form" ref={ref => (this.formRef = ref)}>
+      <form
+        className="row form"
+        ref={ref => (this.formRef = ref)}
+        encType="multipart/form-data"
+      >
         <div className="col-xs-12">
           <TitleBox
             readImage={this.props.onReadImage}

@@ -12,7 +12,7 @@ class Authentication extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      loginURI: "/api/v1/auth/login",
+      loginURI: "http://blog-stuff.herokuapp.com/api/v1/auth/login",
       data: {},
       toolTipMessage: null,
       toolTipType: null

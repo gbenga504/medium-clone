@@ -5,20 +5,24 @@ import "./index.css";
  * @Component Success renders a success tool-tip like notifier to the user 
  */
 class ToolTip extends PureComponent {
-  shouldToolTipHide = () => {
-    if (this.props.type != null)
-      window.setTimeout(() => {
-        this.toolTip.style.top = "20px";
-      });
+  componentDidMount() {
+    console.log("The toolTip is ", this.toolTip);
+  }
+
+  componentDidUpdate() {
+    if (this.toolTip !== null)
+      if (this.props.type != null)
+        window.setTimeout(() => {
+          this.toolTip.style.top = "20px";
+        });
 
     if (this.props.type !== "loading")
       window.setTimeout(() => {
         this.toolTip.style.top = "-60px";
       }, 6000);
-  };
+  }
 
   render() {
-    this.shouldToolTipHide();
     return (
       <div className="report" ref={ref => (this.toolTip = ref)}>
         <div

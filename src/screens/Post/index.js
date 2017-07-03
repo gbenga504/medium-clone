@@ -14,7 +14,7 @@ class Post extends PureComponent {
     super(props);
     this.state = {
       displayImageURI: null,
-      postURI: "/api/v1/post",
+      postURI: "http://blog-stuff.herokuapp.com/api/v1/post",
       bodyHTML: "",
       titleHTML: "",
       formRef: null,
@@ -40,7 +40,7 @@ class Post extends PureComponent {
               toolTipMessage: "could not retrieve information",
               toolTipType: "error"
             });
-          } else Promise.reject(response.message);
+          } else return Promise.reject(response.message);
         })
         .catch(error => {
           this.setState({
@@ -48,6 +48,10 @@ class Post extends PureComponent {
             toolTipType: "error"
           });
         });
+
+    let userDetails = window.localStorage.getItem("user_details"),
+      parsedUserDetails = JSON.parse(userDetails);
+    this.setState({ userDetails: parsedUserDetails });
   }
 
   /**
@@ -58,6 +62,7 @@ class Post extends PureComponent {
       toolTipMessage: "sending post...",
       toolTipType: "loading"
     });
+
     let requestMethod = this.props.match.params.id ? "Put" : "Post";
     httpFetch(this.state.postURI, {
       handleResponseAs: "json",
@@ -65,12 +70,12 @@ class Post extends PureComponent {
       body: new FormData(this.state.formRef)
     })
       .then(response => {
-        if (response.status == "message")
+        if (response.status == "success")
           this.setState({
             toolTipMessage: "message posted successfully",
             toolTipType: "success"
           });
-        else Promise.reject(response.message);
+        else return Promise.reject(response.message);
       })
       .catch(error => {
         this.setState({
@@ -78,10 +83,6 @@ class Post extends PureComponent {
           toolTipType: "error"
         });
       });
-
-    let userDetails = window.localStorage.getItem("user_details"),
-      parsedUserDetails = JSON.parse(userDetails);
-    this.setState({ userDetails: parsedUserDetails });
   };
 
   /**

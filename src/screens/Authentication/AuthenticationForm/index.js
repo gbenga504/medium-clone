@@ -82,6 +82,10 @@ const LoginForm = props => {
         onKeyUp={() => {
           props.onKeyUp({ type: "email", value: this.email.value });
         }}
+        onChange={() => {
+          console.log(this.email.value);
+          props.onKeyUp({ type: "email", value: this.email.value });
+        }}
       />
       <input
         ref={ref => (this.password = ref)}
@@ -89,6 +93,9 @@ const LoginForm = props => {
         placeholder="Enter your password"
         className="col-xs-12 col-sm-offset-1 col-sm-10 formElContainer inputEl"
         onKeyUp={() => {
+          props.onKeyUp({ type: "password", value: this.password.value });
+        }}
+        onChange={() => {
           props.onKeyUp({ type: "password", value: this.password.value });
         }}
       />

@@ -14,13 +14,13 @@ class Admin extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      profileURI: "/api/v1/user",
+      profileURI: "http://blog-stuff.herokuapp.com/api/v1/user",
       adminData: {},
       posts: [],
-      deleteURI: "/api/v1/post",
+      deleteURI: "http://blog-stuff.herokuapp.com/api/v1/post",
       makePostLinkVisible: false,
       toolTipMessage: null,
-      toolTipType: null
+      toolTipType: null,
     };
     this.deletePost = this.deletePost.bind(this);
   }
@@ -34,7 +34,7 @@ class Admin extends PureComponent {
       makePostLinkVisible: shouldMakeVisible
     });
 
-    let userId = window.localStorage.getItem("user_details");
+    let userId = JSON.parse(window.localStorage.getItem("user_details")).userId;
     httpFetch(`${this.state.profileURI}/${userId}`, {
       method: "Get",
       handleResponseAs: "json"
@@ -55,7 +55,7 @@ class Admin extends PureComponent {
       })
       .catch(error => {
         console.log(
-          "An error occurred while trying to read info from the database"
+          "An error occurred while trying to read info from the database", error
         );
       });
   }
@@ -112,7 +112,7 @@ class Admin extends PureComponent {
               >
                 {this.state.posts.map(data => {
                   return (
-                    <Linking to={`/news/${data.id}`}>
+                    <Linking to={`/news/${data.id}`} key={`${data.id}`}>
                       <MaterialCard data={data} deletePost={this.deletePost} />
                     </Linking>
                   );

@@ -15,14 +15,14 @@ class Home extends PureComponent {
     this.state = {
       latestLoad: false,
       latestCount: 0,
-      latestURI: "/api/v1/post",
+      latestURI: "http://blog-stuff.herokuapp.com/api/v1/post",
       latestData: [],
       makePostLinkVisible: false
     };
   }
 
   //Fetch Latest news information from DB
-  componentDidMount() {
+  componentDidMount = () => {
     let shouldMakeVisible = window.localStorage.getItem("user_details")
       ? true
       : false;
@@ -35,18 +35,18 @@ class Home extends PureComponent {
       handleResponseAs: "json"
     })
       .then(response => {
-        if (response.status == "success")
+        if (response.status == "success") {
           this.setState({
             latestData: response.data,
             latestCount: response.data.length,
             latestLoad: false
           });
-        else Promise.reject(response.message);
+        } else return Promise.reject(response.message);
       })
       .catch(error => {
         console.log("An error occurred in fetching information", error);
       });
-  }
+  };
 
   /**
    * @function takes topic as params and loads more data based on the topic
@@ -61,7 +61,7 @@ class Home extends PureComponent {
       handleResponseAs: "json"
     })
       .then(response => {
-        if (response.status == "success")
+        if (response.status == "success" && response.data.length >= 1)
           this.setState((prevState, prevProps) => {
             return {
               latestData: response.data,
@@ -69,7 +69,11 @@ class Home extends PureComponent {
               latestCount: prevState.latestCount + response.data.length
             };
           });
-        else Promise.reject(response.message);
+        else if (response.data.length < 1)
+          this.setState({
+            latestLoad: false
+          });
+        else return Promise.reject(response.message);
       })
       .catch(error => {
         this.setState({ latestLoad: false });

@@ -14,7 +14,7 @@ class News extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      dataURI: "/api/v1/post",
+      dataURI: "http://blog-stuff.herokuapp.com/api/v1/post",
       mainData: {},
       moreNewsData: []
     };
