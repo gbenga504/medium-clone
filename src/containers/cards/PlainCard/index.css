@@ -16,6 +16,11 @@
     margin-top: 20px;
 }
 
+.imageTagger img{
+    width: 100%;
+    height: 100%;
+}
+
 .cardBody{
     margin-top: 20px;
     font-family: MidRaleway;

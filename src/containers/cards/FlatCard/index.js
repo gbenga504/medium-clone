@@ -12,18 +12,18 @@ const FlatCard = (props) => {
         <div className="row" id="card">
           <div className="col-xs-4" id="newsDisplayHolder">
             <img
-              src={props.data.postImage.length > 0 ? `${props.data.postImage}` : ""}
+              src={props.data.postImage.length > 0 ? `http://blog-stuff.herokuapp.com/${props.data.postImage}` : ""}
               height="100%"
               width="100%"
             />
           </div>
           <div className="col-xs-8" id="content">
             <div className="col-xs-12 title">{props.data.title}</div>
-            <div className="col-xs-12 body">{`${props.data.body}...read more`}</div>
+            <div className="col-xs-12 body" dangerouslySetInnerHTML={{ __html : `${props.data.body} ...read more` }} ></div>
             <Bottom
               writer={props.data.User.firstName}
               timePosted={props.data.updated_at}
-              userProfilePics={props.data.User.userProfilePic}
+              userProfilePics={`http://blog-stuff.herokuapp.com${props.data.User.userProfilePic}`}
             />
           </div>
         </div>

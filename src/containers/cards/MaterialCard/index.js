@@ -16,12 +16,12 @@ const MaterialCard = props => {
         </div>
         <div className="row">
           <div className="col-xs-12 post_image">
-            <img src={props.data.postImage} alt="" />
+            <img src={`http://blog-stuff.herokuapp.com${props.data.postImage}`} alt="" />
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12 post_message_holder">
-            <span className="post_message">{props.data.body}</span>
+            <span className="post_message" dangerouslySetInnerHTML={{ __html : props.data.body }}></span>
           </div>
         </div>
         <div className="row" style={{ height: "30px" }}>

@@ -9,8 +9,7 @@ class Message extends PureComponent {
     return (
       <div className="row message">
         <DisplayImage displayImageURI={this.props.displayImageURI} />
-        <div className="col-xs-12 text-justify messageBody">
-          {this.props.body}
+        <div className="col-xs-12 text-justify messageBody" dangerouslySetInnerHTML={{ __html : this.props.body }}>
         </div>
       </div>
     );
@@ -29,7 +28,7 @@ const DisplayImage = props => {
     >
       <div className="col-xs-12 col-sm-offset-3 col-sm-6">
         <img
-          src={props.displayImageURI}
+          src={`http://blog-stuff.herokuapp.com/${props.displayImageURI}`}
           alt=""
           className="displayImage"
         />

@@ -13,7 +13,7 @@ class SubHeader extends PureComponent {
             <div className="col-xs-2">
               <div className="profile_image_holder">
                 <img
-                  src={this.props.profile.userProfilePic}
+                  src={`http://blog-stuff.herokuapp.com${this.props.profile.userProfilePic}`}
                   alt=""
                   width="100%"
                   height="100%"

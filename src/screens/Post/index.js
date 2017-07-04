@@ -37,8 +37,6 @@ class Post extends PureComponent {
               titleHTML: response.data.title,
               bodyHTML: response.data.body,
               displayImageURI: response.data.postImage,
-              toolTipMessage: "could not retrieve information",
-              toolTipType: "error"
             });
           } else return Promise.reject(response.message);
         })
@@ -54,6 +52,8 @@ class Post extends PureComponent {
     this.setState({ userDetails: parsedUserDetails });
   }
 
+  
+
   /**
    * This function either makes a post or updates a post based on the url 
    */
@@ -63,8 +63,10 @@ class Post extends PureComponent {
       toolTipType: "loading"
     });
 
-    let requestMethod = this.props.match.params.id ? "Put" : "Post";
-    httpFetch(this.state.postURI, {
+    let requestMethod = this.props.match.params.id ? "Put" : "Post",
+        postURI = this.props.match.params.id ? `${this.state.postURI}/${this.props.match.params.id}` : this.state.postURI;
+
+    httpFetch(postURI, {
       handleResponseAs: "json",
       method: requestMethod,
       body: new FormData(this.state.formRef)

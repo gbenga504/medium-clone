@@ -5,22 +5,22 @@ import React from "react";
  * @Component PlainCard renders a plain card type 
  */
 
-const PlainCard = () => {
+const PlainCard = (props) => {
   return (
     <div className="row">
       <div className="col-xs-12 plainCard">
         <div className="row">
-          <div className="col-xs-12 cardTitle">{this.props.data.title}</div>
+          <div className="col-xs-12 cardTitle">{props.data.title}</div>
         </div>
         <div className="row">
           <div className="col-xs-12">
             <div className="imageTagger">
-              <img src="" alt="" />
+              <img src={`http://blog-stuff.herokuapp.com/${props.data.User.userProfilePic}`} alt="" />
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-xs-12 cardBody">{this.props.data.body}</div>
+          <div className="col-xs-12 cardBody" dangerouslySetInnerHTML={{ __html : props.data.body }}></div>
         </div>
         <div className="row">
           <div className="col-xs-12">

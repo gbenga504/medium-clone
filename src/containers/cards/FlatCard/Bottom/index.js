@@ -8,7 +8,7 @@ import moment from "moment";
 const Bottom = (props) => {
     return (
       <div className="bottom">
-        <ImageIcon userProfilePics={props.userProfilePic} />
+        <ImageIcon userProfilePics={props.userProfilePics} />
         <CoreInfo
           writer={props.writer}
           timePosted={props.timePosted}
@@ -26,7 +26,7 @@ const ImageIcon = props => {
   return (
     <div className="imageIcon">
       <img
-        src={`${props.userProfilePic}`}
+        src={props.userProfilePics ? `${props.userProfilePics}` : ""}
         width="100%"
         height="100%"
         className="writer_display_image"

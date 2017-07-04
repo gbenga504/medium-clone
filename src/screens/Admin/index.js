@@ -20,7 +20,7 @@ class Admin extends PureComponent {
       deleteURI: "http://blog-stuff.herokuapp.com/api/v1/post",
       makePostLinkVisible: false,
       toolTipMessage: null,
-      toolTipType: null,
+      toolTipType: null
     };
     this.deletePost = this.deletePost.bind(this);
   }
@@ -55,7 +55,8 @@ class Admin extends PureComponent {
       })
       .catch(error => {
         console.log(
-          "An error occurred while trying to read info from the database", error
+          "An error occurred while trying to read info from the database",
+          error
         );
       });
   }
@@ -64,22 +65,26 @@ class Admin extends PureComponent {
  * Delete ost based on Id 
  * @param {String} postId 
  */
-  deletePost(ev,postId) {
+  deletePost(ev, postId) {
     ev.preventDefault();
+    let userId = JSON.parse(window.localStorage.getItem("user_details")).userId,
+      secret = JSON.parse(window.localStorage.getItem("user_details")).secret;
+
     this.setState({
       toolTipMessage: "Deleting post...",
       toolTipType: "loading"
     });
     httpFetch(`${this.state.deleteURI}/${postId}`, {
       method: "delete",
-      handleResponseAs: "json"
+      handleResponseAs: "json",
+      body: JSON.stringify({ userId, secret })
     }).then(response => {
       if (response.status == "success") {
-        let updatedPost = this.state.post.filter(item => {
+        let updatedPost = this.state.posts.filter(item => {
           return item.postId != postId;
         });
         this.setState({
-          post: updatedPost,
+          posts: updatedPost,
           toolTipMessage: "Post Deleted successfully",
           toolTipType: "success"
         });
@@ -114,7 +119,11 @@ class Admin extends PureComponent {
                 {this.state.posts.map(data => {
                   return (
                     <Linking to={`/news/${data.id}`} key={`${data.id}`}>
-                      <MaterialCard data={data} deletePost={this.deletePost} key={`${data.id}`}/>
+                      <MaterialCard
+                        data={data}
+                        deletePost={this.deletePost}
+                        key={`${data.id}`}
+                      />
                     </Linking>
                   );
                 })}

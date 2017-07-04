@@ -22,8 +22,7 @@ class Info extends PureComponent {
         <div className="col-xs-12">
           <div id="imageIcon">
             <img
-              src={this.props.writersImage}
-              alt="commenter's image"
+              src={`http://blog-stuff.herokuapp.com${this.props.writersImage}`}
               width="100%"
               height="100%"
               id="writersImage"

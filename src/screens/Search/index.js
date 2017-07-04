@@ -54,7 +54,7 @@ class Search extends PureComponent {
           if (response.status == "success")
             this.setState((prevState, prevProps) => {
               return {
-                searchData: response.data,
+                searchData: [...prevState.searchData, ...response.data],
                 isDataLoading: false,
                 startData: prevState.startData + response.data.length
               };
@@ -64,7 +64,6 @@ class Search extends PureComponent {
         })
         .catch(error => {
           this.setState({ isDataLoading: false });
-          console.log("An error occurred while trying to get data");
         });
     }
   };
