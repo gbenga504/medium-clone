@@ -47,8 +47,8 @@ const MaterialCard = props => {
                 alt="delete_btn"
                 style={{marginLeft: 20}}
                 className="recommend_img"
-                onClick={() => {
-                  props.deletePost(`${props.data.id}`);
+                onClick={(ev) => {
+                  props.deletePost(ev,`${props.data.id}`);
                 }}
               />
             </div>

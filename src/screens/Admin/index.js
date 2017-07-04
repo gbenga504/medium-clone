@@ -64,7 +64,8 @@ class Admin extends PureComponent {
  * Delete ost based on Id 
  * @param {String} postId 
  */
-  deletePost(postId) {
+  deletePost(ev,postId) {
+    ev.preventDefault();
     this.setState({
       toolTipMessage: "Deleting post...",
       toolTipType: "loading"
@@ -113,7 +114,7 @@ class Admin extends PureComponent {
                 {this.state.posts.map(data => {
                   return (
                     <Linking to={`/news/${data.id}`} key={`${data.id}`}>
-                      <MaterialCard data={data} deletePost={this.deletePost}/>
+                      <MaterialCard data={data} deletePost={this.deletePost} key={`${data.id}`}/>
                     </Linking>
                   );
                 })}
