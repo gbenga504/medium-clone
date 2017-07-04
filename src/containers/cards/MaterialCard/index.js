@@ -16,12 +16,18 @@ const MaterialCard = props => {
         </div>
         <div className="row">
           <div className="col-xs-12 post_image">
-            <img src={`http://blog-stuff.herokuapp.com${props.data.postImage}`} alt="" />
+            <img
+              src={`http://blog-stuff.herokuapp.com${props.data.postImage}`}
+              alt=""
+            />
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12 post_message_holder">
-            <span className="post_message" dangerouslySetInnerHTML={{ __html : props.data.body }}></span>
+            <span
+              className="post_message"
+              dangerouslySetInnerHTML={{ __html: props.data.body }}
+            />
           </div>
         </div>
         <div className="row" style={{ height: "30px" }}>
@@ -35,22 +41,22 @@ const MaterialCard = props => {
               />
             </div>
             <div className="admin_core_btn">
-                <img
-                  src="/images/edit.png"
-                  alt="edit_btn"
-                  className="recommend_img"
-                  onClick = {(ev) => {
-                    ev.preventDefault();
-                    props.history.push(`/post/${props.data.id}`); 
-                  }}
-                />
+              <img
+                src="/images/edit.png"
+                alt="edit_btn"
+                className="recommend_img"
+                onClick={ev => {
+                  ev.preventDefault();
+                  props.history.push(`/post/${props.data.id}`);
+                }}
+              />
               <img
                 src="/images/remove.png"
                 alt="delete_btn"
-                style={{marginLeft: 20}}
+                style={{ marginLeft: 20 }}
                 className="recommend_img"
-                onClick={(ev) => {
-                  props.deletePost(ev,`${props.data.id}`);
+                onClick={ev => {
+                  props.deletePost(ev, `${props.data.id}`);
                 }}
               />
             </div>

@@ -7,7 +7,7 @@ import "./index.css";
 /**
  * @Component PostBox renders the post box of the application 
  */
-const PostBox = (props) => {
+const PostBox = props => {
   return (
     <div className="row messageBox">
       <Editor

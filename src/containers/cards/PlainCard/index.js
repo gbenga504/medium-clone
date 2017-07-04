@@ -5,7 +5,7 @@ import React from "react";
  * @Component PlainCard renders a plain card type 
  */
 
-const PlainCard = (props) => {
+const PlainCard = props => {
   return (
     <div className="row">
       <div className="col-xs-12 plainCard">
@@ -15,12 +15,18 @@ const PlainCard = (props) => {
         <div className="row">
           <div className="col-xs-12">
             <div className="imageTagger">
-              <img src={`http://blog-stuff.herokuapp.com/${props.data.User.userProfilePic}`} alt="" />
+              <img
+                src={`http://blog-stuff.herokuapp.com/${props.data.User.userProfilePic}`}
+                alt=""
+              />
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-xs-12 cardBody" dangerouslySetInnerHTML={{ __html : props.data.body }}></div>
+          <div
+            className="col-xs-12 cardBody"
+            dangerouslySetInnerHTML={{ __html: props.data.body }}
+          />
         </div>
         <div className="row">
           <div className="col-xs-12">

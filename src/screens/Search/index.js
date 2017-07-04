@@ -87,7 +87,10 @@ class Search extends PureComponent {
     return (
       <div className="row">
         <div className="col-xs-12">
-          <Header color="#fff" makePostLinkVisible={this.state.makePostLinkVisible}/>
+          <Header
+            color="#fff"
+            makePostLinkVisible={this.state.makePostLinkVisible}
+          />
           <ContainerLayout color="#fff">
             <div className="row">
               <div className="col-xs-12">

@@ -5,18 +5,15 @@ import moment from "moment";
 /**
  * @Component Bottom renders the bottom segment of the card which contains user info 
  */
-const Bottom = (props) => {
-    return (
-      <div className="bottom">
-        <ImageIcon userProfilePics={props.userProfilePics} />
-        <CoreInfo
-          writer={props.writer}
-          timePosted={props.timePosted}
-        />
-        <BottomIcon />
-      </div>
-    );
-}
+const Bottom = props => {
+  return (
+    <div className="bottom">
+      <ImageIcon userProfilePics={props.userProfilePics} />
+      <CoreInfo writer={props.writer} timePosted={props.timePosted} />
+      <BottomIcon />
+    </div>
+  );
+};
 
 /**
  * @Functional Component ImageIcon renders the display image of the writer

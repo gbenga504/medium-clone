@@ -44,8 +44,8 @@ class SecuredField extends PureComponent {
   componentDidMount() {
     let userDetails = window.localStorage.getItem("user_details"),
       parsedUserDetails = JSON.parse(userDetails);
-      this.userId.value = parsedUserDetails.userId;
-      this.secret.value = parsedUserDetails.secret;
+    this.userId.value = parsedUserDetails.userId;
+    this.secret.value = parsedUserDetails.secret;
   }
 
   render() {
@@ -54,13 +54,13 @@ class SecuredField extends PureComponent {
         <input
           type="hidden"
           name="userId"
-          ref={(ref) => this.userId = ref}
+          ref={ref => (this.userId = ref)}
           value=""
         />
         <input
           type="hidden"
           name="secret"
-          ref={(ref) => this.secret = ref}
+          ref={ref => (this.secret = ref)}
           value=""
         />
       </div>

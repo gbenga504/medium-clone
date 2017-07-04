@@ -9,8 +9,10 @@ class Message extends PureComponent {
     return (
       <div className="row message">
         <DisplayImage displayImageURI={this.props.displayImageURI} />
-        <div className="col-xs-12 text-justify messageBody" dangerouslySetInnerHTML={{ __html : this.props.body }}>
-        </div>
+        <div
+          className="col-xs-12 text-justify messageBody"
+          dangerouslySetInnerHTML={{ __html: this.props.body }}
+        />
       </div>
     );
   }

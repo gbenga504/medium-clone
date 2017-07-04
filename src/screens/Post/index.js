@@ -35,7 +35,7 @@ class Post extends PureComponent {
             this.setState({
               titleHTML: response.data.title,
               bodyHTML: response.data.body,
-              displayImageURI: response.data.postImage,
+              displayImageURI: response.data.postImage
             });
           } else return Promise.reject(response.message);
         })
@@ -47,8 +47,6 @@ class Post extends PureComponent {
         });
   }
 
-  
-
   /**
    * This function either makes a post or updates a post based on the url 
    */
@@ -59,7 +57,9 @@ class Post extends PureComponent {
     });
 
     let requestMethod = this.props.match.params.id ? "Put" : "Post",
-        postURI = this.props.match.params.id ? `${this.state.postURI}/${this.props.match.params.id}` : this.state.postURI;
+      postURI = this.props.match.params.id
+        ? `${this.state.postURI}/${this.props.match.params.id}`
+        : this.state.postURI;
 
     httpFetch(postURI, {
       handleResponseAs: "json",
