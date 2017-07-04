@@ -54,10 +54,10 @@ class Admin extends PureComponent {
         }
       })
       .catch(error => {
-        console.log(
-          "An error occurred while trying to read info from the database",
-          error
-        );
+        this.setState({
+          toolTipMessage: "Error loading user profile data",
+          toolTipType: "error"
+        });
       });
   }
 
@@ -81,7 +81,7 @@ class Admin extends PureComponent {
     }).then(response => {
       if (response.status == "success") {
         let updatedPost = this.state.posts.filter(item => {
-          return item.postId != postId;
+          return item.id != postId;
         });
         this.setState({
           posts: updatedPost,
@@ -123,6 +123,7 @@ class Admin extends PureComponent {
                         data={data}
                         deletePost={this.deletePost}
                         key={`${data.id}`}
+                        history={this.props.history}
                       />
                     </Linking>
                   );

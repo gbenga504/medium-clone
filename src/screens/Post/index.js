@@ -18,7 +18,6 @@ class Post extends PureComponent {
       bodyHTML: "",
       titleHTML: "",
       formRef: null,
-      userDetails: {},
       toolTipMessage: null,
       toolTipType: null
     };
@@ -46,10 +45,6 @@ class Post extends PureComponent {
             toolTipType: "error"
           });
         });
-
-    let userDetails = window.localStorage.getItem("user_details"),
-      parsedUserDetails = JSON.parse(userDetails);
-    this.setState({ userDetails: parsedUserDetails });
   }
 
   
@@ -141,7 +136,6 @@ class Post extends PureComponent {
             <div className="row">
               <div className="col-xs-12">
                 <Form
-                  userDetails={this.state.userDetails}
                   onReadImage={this.readImage}
                   onupdateFormRef={this.updateFormRef}
                   bodyHTML={this.state.bodyHTML}

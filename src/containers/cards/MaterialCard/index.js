@@ -35,13 +35,15 @@ const MaterialCard = props => {
               />
             </div>
             <div className="admin_core_btn">
-              <Link to={`/post/${props.data.id}`}>
                 <img
                   src="/images/edit.png"
                   alt="edit_btn"
                   className="recommend_img"
+                  onClick = {(ev) => {
+                    ev.preventDefault();
+                    props.history.push(`/post/${props.data.id}`); 
+                  }}
                 />
-              </Link>
               <img
                 src="/images/remove.png"
                 alt="delete_btn"

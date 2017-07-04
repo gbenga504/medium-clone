@@ -5,10 +5,6 @@ import "./index.css";
  * @Component Success renders a success tool-tip like notifier to the user 
  */
 class ToolTip extends PureComponent {
-  componentDidMount() {
-    console.log("The toolTip is ", this.toolTip);
-  }
-
   componentDidUpdate() {
     if (this.toolTip !== null)
       if (this.props.type != null)

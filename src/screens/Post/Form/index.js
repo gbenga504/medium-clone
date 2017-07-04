@@ -29,7 +29,7 @@ class Form extends PureComponent {
             handleBodyChange={this.props.handleBodyChange}
             bodyHTML={this.props.formInnerHTML.bodyHTML}
           />
-          <SecuredField userDetails={this.props.userDetails} />
+          <SecuredField />
         </div>
       </form>
     );
@@ -40,22 +40,33 @@ class Form extends PureComponent {
  * @Functional Component SecurrFields displays secure fields 
  * @param {Object} props 
  */
-const SecuredField = props => {
-  return (
-    <div>
-      <input
-        type="hidden"
-        name="userId"
-        value={props.userDetails ? props.userDetails.userId : ""}
-      />
-      <input
-        type="hidden"
-        name="secret"
-        value={props.userDetails ? props.userDetails.secret : ""}
-      />
-    </div>
-  );
-};
+class SecuredField extends PureComponent {
+  componentDidMount() {
+    let userDetails = window.localStorage.getItem("user_details"),
+      parsedUserDetails = JSON.parse(userDetails);
+      this.userId.value = parsedUserDetails.userId;
+      this.secret.value = parsedUserDetails.secret;
+  }
+
+  render() {
+    return (
+      <div>
+        <input
+          type="hidden"
+          name="userId"
+          ref={(ref) => this.userId = ref}
+          value=""
+        />
+        <input
+          type="hidden"
+          name="secret"
+          ref={(ref) => this.secret = ref}
+          value=""
+        />
+      </div>
+    );
+  }
+}
 
 /**
  * @Functional Component renders the display image of the post form 
